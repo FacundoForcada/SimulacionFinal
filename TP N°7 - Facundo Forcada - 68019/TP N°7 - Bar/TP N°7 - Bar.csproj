@@ -61,6 +61,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="TP7_Principal.resx">
       <DependentUpon>TP7_Principal.cs</DependentUpon>
@@ -87,6 +88,9 @@
       <Project>{788a574f-7b37-4f26-ad28-2a3f67f20b50}</Project>
       <Name>NumerosAleatorios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wooden_background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

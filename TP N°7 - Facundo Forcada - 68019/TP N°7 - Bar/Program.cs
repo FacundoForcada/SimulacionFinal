@@ -16,7 +16,7 @@ namespace TP_N_7___Bar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.Run(new TP7_Principal());
         }
     }
 }
