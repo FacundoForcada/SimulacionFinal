@@ -28,57 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gb_continua = new System.Windows.Forms.GroupBox();
-            this.txt_valor_h = new System.Windows.Forms.TextBox();
             this.txt_litros_vaso = new System.Windows.Forms.TextBox();
-            this.lbl_valor_h = new System.Windows.Forms.Label();
             this.lbl_litros_vaso = new System.Windows.Forms.Label();
             this.dgv_simulaciones = new System.Windows.Forms.DataGridView();
-            this.gb_solucion = new System.Windows.Forms.GroupBox();
-            this.txt_espera_maxima = new System.Windows.Forms.TextBox();
-            this.lbl_espera_maxima = new System.Windows.Forms.Label();
-            this.txt_consumen_masuna = new System.Windows.Forms.TextBox();
-            this.lbl_consume_masuna = new System.Windows.Forms.Label();
-            this.txt_no_atendidos = new System.Windows.Forms.TextBox();
-            this.lbl_no_atendidos = new System.Windows.Forms.Label();
-            this.btn_detener = new System.Windows.Forms.Button();
-            this.btn_simular = new System.Windows.Forms.Button();
-            this.gb_datos_iniciales = new System.Windows.Forms.GroupBox();
-            this.txt_hasta = new System.Windows.Forms.TextBox();
-            this.txt_desde = new System.Windows.Forms.TextBox();
-            this.txt_eventos = new System.Windows.Forms.TextBox();
-            this.lbl_eventos = new System.Windows.Forms.Label();
-            this.lbl_hasta = new System.Windows.Forms.Label();
-            this.lbl_desde = new System.Windows.Forms.Label();
-            this.gb_actual = new System.Windows.Forms.GroupBox();
-            this.txt_evento = new System.Windows.Forms.TextBox();
-            this.lbl_evento = new System.Windows.Forms.Label();
-            this.gb_llegadas = new System.Windows.Forms.GroupBox();
-            this.txt_llegadas_mediaxhora = new System.Windows.Forms.TextBox();
-            this.lbl_llegadas_mediaxhora = new System.Windows.Forms.Label();
-            this.gb_servir = new System.Windows.Forms.GroupBox();
-            this.txt_servir_b = new System.Windows.Forms.TextBox();
-            this.lbl_servir_b = new System.Windows.Forms.Label();
-            this.txt_servir_a = new System.Windows.Forms.TextBox();
-            this.lbl_servir_a = new System.Windows.Forms.Label();
-            this.gb_lavar = new System.Windows.Forms.GroupBox();
-            this.txt_const_lavar = new System.Windows.Forms.TextBox();
-            this.lbl_lavar_const = new System.Windows.Forms.Label();
-            this.gb_recoger = new System.Windows.Forms.GroupBox();
-            this.lbl_recoge_masveinte = new System.Windows.Forms.Label();
-            this.txt_recoge_masviente = new System.Windows.Forms.TextBox();
-            this.txt_recoge_diezyveinte = new System.Windows.Forms.TextBox();
-            this.lbl_recoge_diezyveinte = new System.Windows.Forms.Label();
-            this.txt_recoge_menosdiez = new System.Windows.Forms.TextBox();
-            this.lbl_recoge_menordiez = new System.Windows.Forms.Label();
-            this.gb_clientes_a_servir = new System.Windows.Forms.GroupBox();
-            this.txt_maximo_cola = new System.Windows.Forms.TextBox();
-            this.lbl_maximo_cola = new System.Windows.Forms.Label();
-            this.lbl_vasos_iniciales = new System.Windows.Forms.Label();
-            this.txt_vasos_iniciales = new System.Windows.Forms.TextBox();
-            this.lbl_promedio_espera = new System.Windows.Forms.Label();
-            this.txt_promedio_espera = new System.Windows.Forms.TextBox();
             this.reloj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.random_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,6 +61,52 @@
             this.total_consumieron_masuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.espera_maxima = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.espera_promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gb_solucion = new System.Windows.Forms.GroupBox();
+            this.txt_promedio_espera = new System.Windows.Forms.TextBox();
+            this.lbl_promedio_espera = new System.Windows.Forms.Label();
+            this.txt_espera_maxima = new System.Windows.Forms.TextBox();
+            this.lbl_espera_maxima = new System.Windows.Forms.Label();
+            this.txt_consumen_masuna = new System.Windows.Forms.TextBox();
+            this.lbl_consume_masuna = new System.Windows.Forms.Label();
+            this.txt_no_atendidos = new System.Windows.Forms.TextBox();
+            this.lbl_no_atendidos = new System.Windows.Forms.Label();
+            this.btn_detener = new System.Windows.Forms.Button();
+            this.btn_simular = new System.Windows.Forms.Button();
+            this.gb_datos_iniciales = new System.Windows.Forms.GroupBox();
+            this.txt_hasta = new System.Windows.Forms.TextBox();
+            this.txt_desde = new System.Windows.Forms.TextBox();
+            this.txt_dias = new System.Windows.Forms.TextBox();
+            this.lbl_dias = new System.Windows.Forms.Label();
+            this.lbl_hasta = new System.Windows.Forms.Label();
+            this.lbl_desde = new System.Windows.Forms.Label();
+            this.gb_actual = new System.Windows.Forms.GroupBox();
+            this.txt_hora = new System.Windows.Forms.TextBox();
+            this.txt_dia = new System.Windows.Forms.TextBox();
+            this.lbl_hora = new System.Windows.Forms.Label();
+            this.lbl_dia = new System.Windows.Forms.Label();
+            this.txt_evento = new System.Windows.Forms.TextBox();
+            this.lbl_evento = new System.Windows.Forms.Label();
+            this.gb_llegadas = new System.Windows.Forms.GroupBox();
+            this.txt_llegadas_mediaxhora = new System.Windows.Forms.TextBox();
+            this.lbl_llegadas_mediaxhora = new System.Windows.Forms.Label();
+            this.gb_servir = new System.Windows.Forms.GroupBox();
+            this.txt_servir_b = new System.Windows.Forms.TextBox();
+            this.lbl_servir_b = new System.Windows.Forms.Label();
+            this.txt_servir_a = new System.Windows.Forms.TextBox();
+            this.lbl_servir_a = new System.Windows.Forms.Label();
+            this.gb_lavar = new System.Windows.Forms.GroupBox();
+            this.txt_const_lavar = new System.Windows.Forms.TextBox();
+            this.lbl_lavar_const = new System.Windows.Forms.Label();
+            this.gb_recoger = new System.Windows.Forms.GroupBox();
+            this.lbl_recoge_masveinte = new System.Windows.Forms.Label();
+            this.txt_recoge_masviente = new System.Windows.Forms.TextBox();
+            this.txt_recoge_diezyveinte = new System.Windows.Forms.TextBox();
+            this.lbl_recoge_diezyveinte = new System.Windows.Forms.Label();
+            this.txt_recoge_menosdiez = new System.Windows.Forms.TextBox();
+            this.lbl_recoge_menordiez = new System.Windows.Forms.Label();
+            this.gb_clientes_a_servir = new System.Windows.Forms.GroupBox();
+            this.lbl_maximo_cola = new System.Windows.Forms.Label();
+            this.txt_maximo_cola = new System.Windows.Forms.TextBox();
             this.gb_continua.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_simulaciones)).BeginInit();
             this.gb_solucion.SuspendLayout();
@@ -122,25 +122,15 @@
             // gb_continua
             // 
             this.gb_continua.BackColor = System.Drawing.Color.Transparent;
-            this.gb_continua.Controls.Add(this.txt_valor_h);
             this.gb_continua.Controls.Add(this.txt_litros_vaso);
-            this.gb_continua.Controls.Add(this.lbl_valor_h);
             this.gb_continua.Controls.Add(this.lbl_litros_vaso);
             this.gb_continua.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_continua.Location = new System.Drawing.Point(677, 11);
+            this.gb_continua.Location = new System.Drawing.Point(364, 11);
             this.gb_continua.Name = "gb_continua";
-            this.gb_continua.Size = new System.Drawing.Size(159, 75);
+            this.gb_continua.Size = new System.Drawing.Size(159, 50);
             this.gb_continua.TabIndex = 40;
             this.gb_continua.TabStop = false;
             this.gb_continua.Text = "Datos para Continua:";
-            // 
-            // txt_valor_h
-            // 
-            this.txt_valor_h.Location = new System.Drawing.Point(111, 46);
-            this.txt_valor_h.Name = "txt_valor_h";
-            this.txt_valor_h.Size = new System.Drawing.Size(37, 20);
-            this.txt_valor_h.TabIndex = 13;
-            this.txt_valor_h.Text = "1";
             // 
             // txt_litros_vaso
             // 
@@ -149,15 +139,6 @@
             this.txt_litros_vaso.Size = new System.Drawing.Size(37, 20);
             this.txt_litros_vaso.TabIndex = 12;
             this.txt_litros_vaso.Text = "450";
-            // 
-            // lbl_valor_h
-            // 
-            this.lbl_valor_h.AutoSize = true;
-            this.lbl_valor_h.Location = new System.Drawing.Point(56, 48);
-            this.lbl_valor_h.Name = "lbl_valor_h";
-            this.lbl_valor_h.Size = new System.Drawing.Size(49, 13);
-            this.lbl_valor_h.TabIndex = 42;
-            this.lbl_valor_h.Text = "h (min):";
             // 
             // lbl_litros_vaso
             // 
@@ -180,14 +161,14 @@
             this.dgv_simulaciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dgv_simulaciones.CausesValidation = false;
             this.dgv_simulaciones.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_simulaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_simulaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_simulaciones.ColumnHeadersHeight = 41;
             this.dgv_simulaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_simulaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -222,7 +203,7 @@
             this.dgv_simulaciones.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_simulaciones.EnableHeadersVisualStyles = false;
             this.dgv_simulaciones.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.dgv_simulaciones.Location = new System.Drawing.Point(12, 120);
+            this.dgv_simulaciones.Location = new System.Drawing.Point(12, 175);
             this.dgv_simulaciones.Name = "dgv_simulaciones";
             this.dgv_simulaciones.ReadOnly = true;
             this.dgv_simulaciones.RowHeadersVisible = false;
@@ -234,445 +215,8 @@
             this.dgv_simulaciones.ShowCellToolTips = false;
             this.dgv_simulaciones.ShowEditingIcon = false;
             this.dgv_simulaciones.ShowRowErrors = false;
-            this.dgv_simulaciones.Size = new System.Drawing.Size(1390, 429);
+            this.dgv_simulaciones.Size = new System.Drawing.Size(965, 374);
             this.dgv_simulaciones.TabIndex = 22;
-            // 
-            // gb_solucion
-            // 
-            this.gb_solucion.BackColor = System.Drawing.Color.Transparent;
-            this.gb_solucion.Controls.Add(this.txt_promedio_espera);
-            this.gb_solucion.Controls.Add(this.lbl_promedio_espera);
-            this.gb_solucion.Controls.Add(this.txt_espera_maxima);
-            this.gb_solucion.Controls.Add(this.lbl_espera_maxima);
-            this.gb_solucion.Controls.Add(this.txt_consumen_masuna);
-            this.gb_solucion.Controls.Add(this.lbl_consume_masuna);
-            this.gb_solucion.Controls.Add(this.txt_no_atendidos);
-            this.gb_solucion.Controls.Add(this.lbl_no_atendidos);
-            this.gb_solucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_solucion.Location = new System.Drawing.Point(1026, 12);
-            this.gb_solucion.Name = "gb_solucion";
-            this.gb_solucion.Size = new System.Drawing.Size(373, 102);
-            this.gb_solucion.TabIndex = 46;
-            this.gb_solucion.TabStop = false;
-            this.gb_solucion.Text = "SOLUCION:";
-            // 
-            // txt_espera_maxima
-            // 
-            this.txt_espera_maxima.Enabled = false;
-            this.txt_espera_maxima.Location = new System.Drawing.Point(272, 25);
-            this.txt_espera_maxima.Name = "txt_espera_maxima";
-            this.txt_espera_maxima.Size = new System.Drawing.Size(89, 20);
-            this.txt_espera_maxima.TabIndex = 19;
-            // 
-            // lbl_espera_maxima
-            // 
-            this.lbl_espera_maxima.Location = new System.Drawing.Point(170, 18);
-            this.lbl_espera_maxima.Name = "lbl_espera_maxima";
-            this.lbl_espera_maxima.Size = new System.Drawing.Size(96, 33);
-            this.lbl_espera_maxima.TabIndex = 48;
-            this.lbl_espera_maxima.Text = "Espera Maxima de un Cliente";
-            this.lbl_espera_maxima.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txt_consumen_masuna
-            // 
-            this.txt_consumen_masuna.Enabled = false;
-            this.txt_consumen_masuna.Location = new System.Drawing.Point(97, 66);
-            this.txt_consumen_masuna.Name = "txt_consumen_masuna";
-            this.txt_consumen_masuna.Size = new System.Drawing.Size(62, 20);
-            this.txt_consumen_masuna.TabIndex = 20;
-            // 
-            // lbl_consume_masuna
-            // 
-            this.lbl_consume_masuna.Location = new System.Drawing.Point(6, 51);
-            this.lbl_consume_masuna.Name = "lbl_consume_masuna";
-            this.lbl_consume_masuna.Size = new System.Drawing.Size(87, 46);
-            this.lbl_consume_masuna.TabIndex = 49;
-            this.lbl_consume_masuna.Text = "Clientes que consumieron más de 1 vez:";
-            this.lbl_consume_masuna.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txt_no_atendidos
-            // 
-            this.txt_no_atendidos.Enabled = false;
-            this.txt_no_atendidos.Location = new System.Drawing.Point(97, 25);
-            this.txt_no_atendidos.Name = "txt_no_atendidos";
-            this.txt_no_atendidos.Size = new System.Drawing.Size(62, 20);
-            this.txt_no_atendidos.TabIndex = 18;
-            // 
-            // lbl_no_atendidos
-            // 
-            this.lbl_no_atendidos.Location = new System.Drawing.Point(6, 18);
-            this.lbl_no_atendidos.Name = "lbl_no_atendidos";
-            this.lbl_no_atendidos.Size = new System.Drawing.Size(87, 33);
-            this.lbl_no_atendidos.TabIndex = 47;
-            this.lbl_no_atendidos.Text = "Clientes No Atendidos:";
-            this.lbl_no_atendidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn_detener
-            // 
-            this.btn_detener.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_detener.Enabled = false;
-            this.btn_detener.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_detener.Location = new System.Drawing.Point(934, 71);
-            this.btn_detener.Name = "btn_detener";
-            this.btn_detener.Size = new System.Drawing.Size(80, 33);
-            this.btn_detener.TabIndex = 16;
-            this.btn_detener.Text = "PARAR";
-            this.btn_detener.UseVisualStyleBackColor = false;
-            // 
-            // btn_simular
-            // 
-            this.btn_simular.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_simular.Enabled = false;
-            this.btn_simular.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_simular.Location = new System.Drawing.Point(848, 71);
-            this.btn_simular.Name = "btn_simular";
-            this.btn_simular.Size = new System.Drawing.Size(80, 33);
-            this.btn_simular.TabIndex = 15;
-            this.btn_simular.Text = "SIMULAR";
-            this.btn_simular.UseVisualStyleBackColor = false;
-            // 
-            // gb_datos_iniciales
-            // 
-            this.gb_datos_iniciales.BackColor = System.Drawing.Color.Transparent;
-            this.gb_datos_iniciales.Controls.Add(this.txt_hasta);
-            this.gb_datos_iniciales.Controls.Add(this.txt_desde);
-            this.gb_datos_iniciales.Controls.Add(this.txt_eventos);
-            this.gb_datos_iniciales.Controls.Add(this.lbl_eventos);
-            this.gb_datos_iniciales.Controls.Add(this.lbl_hasta);
-            this.gb_datos_iniciales.Controls.Add(this.lbl_desde);
-            this.gb_datos_iniciales.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_datos_iniciales.Location = new System.Drawing.Point(12, 11);
-            this.gb_datos_iniciales.Name = "gb_datos_iniciales";
-            this.gb_datos_iniciales.Size = new System.Drawing.Size(173, 103);
-            this.gb_datos_iniciales.TabIndex = 23;
-            this.gb_datos_iniciales.TabStop = false;
-            this.gb_datos_iniciales.Text = "Datos Iniciales:";
-            // 
-            // txt_hasta
-            // 
-            this.txt_hasta.Location = new System.Drawing.Point(105, 71);
-            this.txt_hasta.Name = "txt_hasta";
-            this.txt_hasta.Size = new System.Drawing.Size(54, 20);
-            this.txt_hasta.TabIndex = 3;
-            this.txt_hasta.Text = "1000";
-            // 
-            // txt_desde
-            // 
-            this.txt_desde.Location = new System.Drawing.Point(105, 45);
-            this.txt_desde.Name = "txt_desde";
-            this.txt_desde.Size = new System.Drawing.Size(54, 20);
-            this.txt_desde.TabIndex = 2;
-            this.txt_desde.Text = "1";
-            // 
-            // txt_eventos
-            // 
-            this.txt_eventos.Location = new System.Drawing.Point(105, 19);
-            this.txt_eventos.Name = "txt_eventos";
-            this.txt_eventos.Size = new System.Drawing.Size(54, 20);
-            this.txt_eventos.TabIndex = 1;
-            this.txt_eventos.Text = "100000";
-            // 
-            // lbl_eventos
-            // 
-            this.lbl_eventos.AutoSize = true;
-            this.lbl_eventos.Location = new System.Drawing.Point(11, 22);
-            this.lbl_eventos.Name = "lbl_eventos";
-            this.lbl_eventos.Size = new System.Drawing.Size(91, 13);
-            this.lbl_eventos.TabIndex = 24;
-            this.lbl_eventos.Text = "Cant. Eventos:";
-            // 
-            // lbl_hasta
-            // 
-            this.lbl_hasta.AutoSize = true;
-            this.lbl_hasta.Location = new System.Drawing.Point(14, 74);
-            this.lbl_hasta.Name = "lbl_hasta";
-            this.lbl_hasta.Size = new System.Drawing.Size(88, 13);
-            this.lbl_hasta.TabIndex = 26;
-            this.lbl_hasta.Text = "Mostrar hasta:";
-            // 
-            // lbl_desde
-            // 
-            this.lbl_desde.AutoSize = true;
-            this.lbl_desde.Location = new System.Drawing.Point(11, 48);
-            this.lbl_desde.Name = "lbl_desde";
-            this.lbl_desde.Size = new System.Drawing.Size(91, 13);
-            this.lbl_desde.TabIndex = 25;
-            this.lbl_desde.Text = "Mostrar desde:";
-            // 
-            // gb_actual
-            // 
-            this.gb_actual.BackColor = System.Drawing.Color.Transparent;
-            this.gb_actual.Controls.Add(this.txt_evento);
-            this.gb_actual.Controls.Add(this.lbl_evento);
-            this.gb_actual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_actual.Location = new System.Drawing.Point(842, 12);
-            this.gb_actual.Name = "gb_actual";
-            this.gb_actual.Size = new System.Drawing.Size(178, 53);
-            this.gb_actual.TabIndex = 44;
-            this.gb_actual.TabStop = false;
-            this.gb_actual.Text = "Simulación:";
-            // 
-            // txt_evento
-            // 
-            this.txt_evento.CausesValidation = false;
-            this.txt_evento.Enabled = false;
-            this.txt_evento.Location = new System.Drawing.Point(66, 19);
-            this.txt_evento.Name = "txt_evento";
-            this.txt_evento.ReadOnly = true;
-            this.txt_evento.Size = new System.Drawing.Size(100, 20);
-            this.txt_evento.TabIndex = 17;
-            // 
-            // lbl_evento
-            // 
-            this.lbl_evento.AutoSize = true;
-            this.lbl_evento.Location = new System.Drawing.Point(9, 22);
-            this.lbl_evento.Name = "lbl_evento";
-            this.lbl_evento.Size = new System.Drawing.Size(51, 13);
-            this.lbl_evento.TabIndex = 45;
-            this.lbl_evento.Text = "Evento:";
-            // 
-            // gb_llegadas
-            // 
-            this.gb_llegadas.BackColor = System.Drawing.Color.Transparent;
-            this.gb_llegadas.Controls.Add(this.txt_llegadas_mediaxhora);
-            this.gb_llegadas.Controls.Add(this.lbl_llegadas_mediaxhora);
-            this.gb_llegadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_llegadas.Location = new System.Drawing.Point(191, 11);
-            this.gb_llegadas.Name = "gb_llegadas";
-            this.gb_llegadas.Size = new System.Drawing.Size(167, 48);
-            this.gb_llegadas.TabIndex = 27;
-            this.gb_llegadas.TabStop = false;
-            this.gb_llegadas.Text = "Llegadas Clientes (hora):";
-            // 
-            // txt_llegadas_mediaxhora
-            // 
-            this.txt_llegadas_mediaxhora.Location = new System.Drawing.Point(89, 19);
-            this.txt_llegadas_mediaxhora.Name = "txt_llegadas_mediaxhora";
-            this.txt_llegadas_mediaxhora.Size = new System.Drawing.Size(34, 20);
-            this.txt_llegadas_mediaxhora.TabIndex = 4;
-            this.txt_llegadas_mediaxhora.Text = "30";
-            // 
-            // lbl_llegadas_mediaxhora
-            // 
-            this.lbl_llegadas_mediaxhora.AutoSize = true;
-            this.lbl_llegadas_mediaxhora.Location = new System.Drawing.Point(38, 22);
-            this.lbl_llegadas_mediaxhora.Name = "lbl_llegadas_mediaxhora";
-            this.lbl_llegadas_mediaxhora.Size = new System.Drawing.Size(45, 13);
-            this.lbl_llegadas_mediaxhora.TabIndex = 28;
-            this.lbl_llegadas_mediaxhora.Text = "Media:";
-            // 
-            // gb_servir
-            // 
-            this.gb_servir.BackColor = System.Drawing.Color.Transparent;
-            this.gb_servir.Controls.Add(this.txt_servir_b);
-            this.gb_servir.Controls.Add(this.lbl_servir_b);
-            this.gb_servir.Controls.Add(this.txt_servir_a);
-            this.gb_servir.Controls.Add(this.lbl_servir_a);
-            this.gb_servir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_servir.Location = new System.Drawing.Point(364, 11);
-            this.gb_servir.Name = "gb_servir";
-            this.gb_servir.Size = new System.Drawing.Size(151, 48);
-            this.gb_servir.TabIndex = 31;
-            this.gb_servir.TabStop = false;
-            this.gb_servir.Text = "Servir Cervezas (min):";
-            // 
-            // txt_servir_b
-            // 
-            this.txt_servir_b.Location = new System.Drawing.Point(102, 19);
-            this.txt_servir_b.Name = "txt_servir_b";
-            this.txt_servir_b.Size = new System.Drawing.Size(37, 20);
-            this.txt_servir_b.TabIndex = 7;
-            this.txt_servir_b.Text = "2";
-            // 
-            // lbl_servir_b
-            // 
-            this.lbl_servir_b.AutoSize = true;
-            this.lbl_servir_b.Location = new System.Drawing.Point(77, 22);
-            this.lbl_servir_b.Name = "lbl_servir_b";
-            this.lbl_servir_b.Size = new System.Drawing.Size(19, 13);
-            this.lbl_servir_b.TabIndex = 33;
-            this.lbl_servir_b.Text = "B:";
-            // 
-            // txt_servir_a
-            // 
-            this.txt_servir_a.Location = new System.Drawing.Point(34, 19);
-            this.txt_servir_a.Name = "txt_servir_a";
-            this.txt_servir_a.Size = new System.Drawing.Size(37, 20);
-            this.txt_servir_a.TabIndex = 6;
-            this.txt_servir_a.Text = "1";
-            // 
-            // lbl_servir_a
-            // 
-            this.lbl_servir_a.AutoSize = true;
-            this.lbl_servir_a.Location = new System.Drawing.Point(9, 22);
-            this.lbl_servir_a.Name = "lbl_servir_a";
-            this.lbl_servir_a.Size = new System.Drawing.Size(19, 13);
-            this.lbl_servir_a.TabIndex = 32;
-            this.lbl_servir_a.Text = "A:";
-            // 
-            // gb_lavar
-            // 
-            this.gb_lavar.BackColor = System.Drawing.Color.Transparent;
-            this.gb_lavar.Controls.Add(this.txt_const_lavar);
-            this.gb_lavar.Controls.Add(this.lbl_lavar_const);
-            this.gb_lavar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_lavar.Location = new System.Drawing.Point(364, 65);
-            this.gb_lavar.Name = "gb_lavar";
-            this.gb_lavar.Size = new System.Drawing.Size(151, 49);
-            this.gb_lavar.TabIndex = 34;
-            this.gb_lavar.TabStop = false;
-            this.gb_lavar.Text = "Lavar Vasos (seg):";
-            // 
-            // txt_const_lavar
-            // 
-            this.txt_const_lavar.Location = new System.Drawing.Point(87, 19);
-            this.txt_const_lavar.Name = "txt_const_lavar";
-            this.txt_const_lavar.Size = new System.Drawing.Size(37, 20);
-            this.txt_const_lavar.TabIndex = 8;
-            this.txt_const_lavar.Text = "15";
-            // 
-            // lbl_lavar_const
-            // 
-            this.lbl_lavar_const.AutoSize = true;
-            this.lbl_lavar_const.Location = new System.Drawing.Point(13, 22);
-            this.lbl_lavar_const.Name = "lbl_lavar_const";
-            this.lbl_lavar_const.Size = new System.Drawing.Size(68, 13);
-            this.lbl_lavar_const.TabIndex = 35;
-            this.lbl_lavar_const.Text = "Constante:";
-            // 
-            // gb_recoger
-            // 
-            this.gb_recoger.BackColor = System.Drawing.Color.Transparent;
-            this.gb_recoger.Controls.Add(this.lbl_recoge_masveinte);
-            this.gb_recoger.Controls.Add(this.txt_recoge_masviente);
-            this.gb_recoger.Controls.Add(this.txt_recoge_diezyveinte);
-            this.gb_recoger.Controls.Add(this.lbl_recoge_diezyveinte);
-            this.gb_recoger.Controls.Add(this.txt_recoge_menosdiez);
-            this.gb_recoger.Controls.Add(this.lbl_recoge_menordiez);
-            this.gb_recoger.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_recoger.Location = new System.Drawing.Point(521, 11);
-            this.gb_recoger.Name = "gb_recoger";
-            this.gb_recoger.Size = new System.Drawing.Size(149, 103);
-            this.gb_recoger.TabIndex = 36;
-            this.gb_recoger.TabStop = false;
-            this.gb_recoger.Text = "Recoger Vasos (min):";
-            // 
-            // lbl_recoge_masveinte
-            // 
-            this.lbl_recoge_masveinte.AutoSize = true;
-            this.lbl_recoge_masveinte.Location = new System.Drawing.Point(25, 74);
-            this.lbl_recoge_masveinte.Name = "lbl_recoge_masveinte";
-            this.lbl_recoge_masveinte.Size = new System.Drawing.Size(70, 13);
-            this.lbl_recoge_masveinte.TabIndex = 39;
-            this.lbl_recoge_masveinte.Text = "Más de 20:";
-            // 
-            // txt_recoge_masviente
-            // 
-            this.txt_recoge_masviente.Location = new System.Drawing.Point(100, 70);
-            this.txt_recoge_masviente.Name = "txt_recoge_masviente";
-            this.txt_recoge_masviente.Size = new System.Drawing.Size(37, 20);
-            this.txt_recoge_masviente.TabIndex = 11;
-            this.txt_recoge_masviente.Text = "8";
-            // 
-            // txt_recoge_diezyveinte
-            // 
-            this.txt_recoge_diezyveinte.Location = new System.Drawing.Point(100, 44);
-            this.txt_recoge_diezyveinte.Name = "txt_recoge_diezyveinte";
-            this.txt_recoge_diezyveinte.Size = new System.Drawing.Size(37, 20);
-            this.txt_recoge_diezyveinte.TabIndex = 10;
-            this.txt_recoge_diezyveinte.Text = "6";
-            // 
-            // lbl_recoge_diezyveinte
-            // 
-            this.lbl_recoge_diezyveinte.AutoSize = true;
-            this.lbl_recoge_diezyveinte.Location = new System.Drawing.Point(8, 47);
-            this.lbl_recoge_diezyveinte.Name = "lbl_recoge_diezyveinte";
-            this.lbl_recoge_diezyveinte.Size = new System.Drawing.Size(87, 13);
-            this.lbl_recoge_diezyveinte.TabIndex = 38;
-            this.lbl_recoge_diezyveinte.Text = "Entre 10 y 20:";
-            // 
-            // txt_recoge_menosdiez
-            // 
-            this.txt_recoge_menosdiez.Location = new System.Drawing.Point(100, 18);
-            this.txt_recoge_menosdiez.Name = "txt_recoge_menosdiez";
-            this.txt_recoge_menosdiez.Size = new System.Drawing.Size(37, 20);
-            this.txt_recoge_menosdiez.TabIndex = 9;
-            this.txt_recoge_menosdiez.Text = "4";
-            // 
-            // lbl_recoge_menordiez
-            // 
-            this.lbl_recoge_menordiez.AutoSize = true;
-            this.lbl_recoge_menordiez.Location = new System.Drawing.Point(11, 21);
-            this.lbl_recoge_menordiez.Name = "lbl_recoge_menordiez";
-            this.lbl_recoge_menordiez.Size = new System.Drawing.Size(84, 13);
-            this.lbl_recoge_menordiez.TabIndex = 37;
-            this.lbl_recoge_menordiez.Text = "Menos de 10:";
-            // 
-            // gb_clientes_a_servir
-            // 
-            this.gb_clientes_a_servir.BackColor = System.Drawing.Color.Transparent;
-            this.gb_clientes_a_servir.Controls.Add(this.lbl_maximo_cola);
-            this.gb_clientes_a_servir.Controls.Add(this.txt_maximo_cola);
-            this.gb_clientes_a_servir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_clientes_a_servir.Location = new System.Drawing.Point(191, 65);
-            this.gb_clientes_a_servir.Name = "gb_clientes_a_servir";
-            this.gb_clientes_a_servir.Size = new System.Drawing.Size(167, 49);
-            this.gb_clientes_a_servir.TabIndex = 29;
-            this.gb_clientes_a_servir.TabStop = false;
-            this.gb_clientes_a_servir.Text = "Cola de Clientes a Servir:";
-            // 
-            // txt_maximo_cola
-            // 
-            this.txt_maximo_cola.Location = new System.Drawing.Point(89, 19);
-            this.txt_maximo_cola.Name = "txt_maximo_cola";
-            this.txt_maximo_cola.Size = new System.Drawing.Size(34, 20);
-            this.txt_maximo_cola.TabIndex = 5;
-            this.txt_maximo_cola.Text = "4";
-            // 
-            // lbl_maximo_cola
-            // 
-            this.lbl_maximo_cola.AutoSize = true;
-            this.lbl_maximo_cola.Location = new System.Drawing.Point(30, 22);
-            this.lbl_maximo_cola.Name = "lbl_maximo_cola";
-            this.lbl_maximo_cola.Size = new System.Drawing.Size(53, 13);
-            this.lbl_maximo_cola.TabIndex = 30;
-            this.lbl_maximo_cola.Text = "Maximo:";
-            // 
-            // lbl_vasos_iniciales
-            // 
-            this.lbl_vasos_iniciales.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_vasos_iniciales.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_vasos_iniciales.Location = new System.Drawing.Point(677, 94);
-            this.lbl_vasos_iniciales.Name = "lbl_vasos_iniciales";
-            this.lbl_vasos_iniciales.Size = new System.Drawing.Size(116, 17);
-            this.lbl_vasos_iniciales.TabIndex = 43;
-            this.lbl_vasos_iniciales.Text = "Cant. Vasos Inicio:";
-            // 
-            // txt_vasos_iniciales
-            // 
-            this.txt_vasos_iniciales.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_vasos_iniciales.Location = new System.Drawing.Point(799, 91);
-            this.txt_vasos_iniciales.Name = "txt_vasos_iniciales";
-            this.txt_vasos_iniciales.Size = new System.Drawing.Size(37, 20);
-            this.txt_vasos_iniciales.TabIndex = 14;
-            this.txt_vasos_iniciales.Text = "100";
-            // 
-            // lbl_promedio_espera
-            // 
-            this.lbl_promedio_espera.Location = new System.Drawing.Point(170, 55);
-            this.lbl_promedio_espera.Name = "lbl_promedio_espera";
-            this.lbl_promedio_espera.Size = new System.Drawing.Size(96, 40);
-            this.lbl_promedio_espera.TabIndex = 50;
-            this.lbl_promedio_espera.Text = "Promedio de Espera un Cliente";
-            this.lbl_promedio_espera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txt_promedio_espera
-            // 
-            this.txt_promedio_espera.Enabled = false;
-            this.txt_promedio_espera.Location = new System.Drawing.Point(272, 66);
-            this.txt_promedio_espera.Name = "txt_promedio_espera";
-            this.txt_promedio_espera.Size = new System.Drawing.Size(89, 20);
-            this.txt_promedio_espera.TabIndex = 21;
             // 
             // reloj
             // 
@@ -984,15 +528,475 @@
             this.espera_promedio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.espera_promedio.Width = 75;
             // 
+            // gb_solucion
+            // 
+            this.gb_solucion.BackColor = System.Drawing.Color.Transparent;
+            this.gb_solucion.Controls.Add(this.txt_promedio_espera);
+            this.gb_solucion.Controls.Add(this.lbl_promedio_espera);
+            this.gb_solucion.Controls.Add(this.txt_espera_maxima);
+            this.gb_solucion.Controls.Add(this.lbl_espera_maxima);
+            this.gb_solucion.Controls.Add(this.txt_consumen_masuna);
+            this.gb_solucion.Controls.Add(this.lbl_consume_masuna);
+            this.gb_solucion.Controls.Add(this.txt_no_atendidos);
+            this.gb_solucion.Controls.Add(this.lbl_no_atendidos);
+            this.gb_solucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_solucion.Location = new System.Drawing.Point(713, 11);
+            this.gb_solucion.Name = "gb_solucion";
+            this.gb_solucion.Size = new System.Drawing.Size(261, 157);
+            this.gb_solucion.TabIndex = 46;
+            this.gb_solucion.TabStop = false;
+            this.gb_solucion.Text = "SOLUCION:";
+            // 
+            // txt_promedio_espera
+            // 
+            this.txt_promedio_espera.Enabled = false;
+            this.txt_promedio_espera.Location = new System.Drawing.Point(170, 121);
+            this.txt_promedio_espera.Name = "txt_promedio_espera";
+            this.txt_promedio_espera.Size = new System.Drawing.Size(78, 20);
+            this.txt_promedio_espera.TabIndex = 21;
+            // 
+            // lbl_promedio_espera
+            // 
+            this.lbl_promedio_espera.Location = new System.Drawing.Point(6, 115);
+            this.lbl_promedio_espera.Name = "lbl_promedio_espera";
+            this.lbl_promedio_espera.Size = new System.Drawing.Size(158, 33);
+            this.lbl_promedio_espera.TabIndex = 50;
+            this.lbl_promedio_espera.Text = "Promedio de Espera un Cliente";
+            this.lbl_promedio_espera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_espera_maxima
+            // 
+            this.txt_espera_maxima.Enabled = false;
+            this.txt_espera_maxima.Location = new System.Drawing.Point(170, 86);
+            this.txt_espera_maxima.Name = "txt_espera_maxima";
+            this.txt_espera_maxima.Size = new System.Drawing.Size(78, 20);
+            this.txt_espera_maxima.TabIndex = 19;
+            // 
+            // lbl_espera_maxima
+            // 
+            this.lbl_espera_maxima.Location = new System.Drawing.Point(6, 82);
+            this.lbl_espera_maxima.Name = "lbl_espera_maxima";
+            this.lbl_espera_maxima.Size = new System.Drawing.Size(158, 33);
+            this.lbl_espera_maxima.TabIndex = 48;
+            this.lbl_espera_maxima.Text = "Espera Maxima de un Cliente";
+            this.lbl_espera_maxima.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_consumen_masuna
+            // 
+            this.txt_consumen_masuna.Enabled = false;
+            this.txt_consumen_masuna.Location = new System.Drawing.Point(170, 55);
+            this.txt_consumen_masuna.Name = "txt_consumen_masuna";
+            this.txt_consumen_masuna.Size = new System.Drawing.Size(39, 20);
+            this.txt_consumen_masuna.TabIndex = 20;
+            // 
+            // lbl_consume_masuna
+            // 
+            this.lbl_consume_masuna.Location = new System.Drawing.Point(6, 47);
+            this.lbl_consume_masuna.Name = "lbl_consume_masuna";
+            this.lbl_consume_masuna.Size = new System.Drawing.Size(158, 34);
+            this.lbl_consume_masuna.TabIndex = 49;
+            this.lbl_consume_masuna.Text = "Clientes que consumieron más de 1 vez:";
+            this.lbl_consume_masuna.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_no_atendidos
+            // 
+            this.txt_no_atendidos.Enabled = false;
+            this.txt_no_atendidos.Location = new System.Drawing.Point(170, 22);
+            this.txt_no_atendidos.Name = "txt_no_atendidos";
+            this.txt_no_atendidos.Size = new System.Drawing.Size(39, 20);
+            this.txt_no_atendidos.TabIndex = 18;
+            // 
+            // lbl_no_atendidos
+            // 
+            this.lbl_no_atendidos.Location = new System.Drawing.Point(24, 22);
+            this.lbl_no_atendidos.Name = "lbl_no_atendidos";
+            this.lbl_no_atendidos.Size = new System.Drawing.Size(140, 20);
+            this.lbl_no_atendidos.TabIndex = 47;
+            this.lbl_no_atendidos.Text = "Clientes No Atendidos:";
+            this.lbl_no_atendidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_detener
+            // 
+            this.btn_detener.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_detener.Enabled = false;
+            this.btn_detener.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_detener.Location = new System.Drawing.Point(627, 132);
+            this.btn_detener.Name = "btn_detener";
+            this.btn_detener.Size = new System.Drawing.Size(80, 33);
+            this.btn_detener.TabIndex = 16;
+            this.btn_detener.Text = "PARAR";
+            this.btn_detener.UseVisualStyleBackColor = false;
+            this.btn_detener.Click += new System.EventHandler(this.btn_detener_Click);
+            // 
+            // btn_simular
+            // 
+            this.btn_simular.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_simular.Enabled = false;
+            this.btn_simular.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_simular.Location = new System.Drawing.Point(529, 132);
+            this.btn_simular.Name = "btn_simular";
+            this.btn_simular.Size = new System.Drawing.Size(80, 33);
+            this.btn_simular.TabIndex = 15;
+            this.btn_simular.Text = "SIMULAR";
+            this.btn_simular.UseVisualStyleBackColor = false;
+            this.btn_simular.Click += new System.EventHandler(this.btn_simular_Click);
+            // 
+            // gb_datos_iniciales
+            // 
+            this.gb_datos_iniciales.BackColor = System.Drawing.Color.Transparent;
+            this.gb_datos_iniciales.Controls.Add(this.txt_hasta);
+            this.gb_datos_iniciales.Controls.Add(this.txt_desde);
+            this.gb_datos_iniciales.Controls.Add(this.txt_dias);
+            this.gb_datos_iniciales.Controls.Add(this.lbl_dias);
+            this.gb_datos_iniciales.Controls.Add(this.lbl_hasta);
+            this.gb_datos_iniciales.Controls.Add(this.lbl_desde);
+            this.gb_datos_iniciales.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_datos_iniciales.Location = new System.Drawing.Point(12, 11);
+            this.gb_datos_iniciales.Name = "gb_datos_iniciales";
+            this.gb_datos_iniciales.Size = new System.Drawing.Size(173, 103);
+            this.gb_datos_iniciales.TabIndex = 23;
+            this.gb_datos_iniciales.TabStop = false;
+            this.gb_datos_iniciales.Text = "Datos Iniciales:";
+            // 
+            // txt_hasta
+            // 
+            this.txt_hasta.Location = new System.Drawing.Point(105, 71);
+            this.txt_hasta.Name = "txt_hasta";
+            this.txt_hasta.Size = new System.Drawing.Size(54, 20);
+            this.txt_hasta.TabIndex = 3;
+            this.txt_hasta.Text = "1000";
+            // 
+            // txt_desde
+            // 
+            this.txt_desde.Location = new System.Drawing.Point(105, 45);
+            this.txt_desde.Name = "txt_desde";
+            this.txt_desde.Size = new System.Drawing.Size(54, 20);
+            this.txt_desde.TabIndex = 2;
+            this.txt_desde.Text = "1";
+            // 
+            // txt_dias
+            // 
+            this.txt_dias.Location = new System.Drawing.Point(105, 19);
+            this.txt_dias.Name = "txt_dias";
+            this.txt_dias.Size = new System.Drawing.Size(54, 20);
+            this.txt_dias.TabIndex = 1;
+            this.txt_dias.Text = "30";
+            // 
+            // lbl_dias
+            // 
+            this.lbl_dias.AutoSize = true;
+            this.lbl_dias.Location = new System.Drawing.Point(32, 22);
+            this.lbl_dias.Name = "lbl_dias";
+            this.lbl_dias.Size = new System.Drawing.Size(70, 13);
+            this.lbl_dias.TabIndex = 24;
+            this.lbl_dias.Text = "Cant. Dias:";
+            // 
+            // lbl_hasta
+            // 
+            this.lbl_hasta.AutoSize = true;
+            this.lbl_hasta.Location = new System.Drawing.Point(14, 74);
+            this.lbl_hasta.Name = "lbl_hasta";
+            this.lbl_hasta.Size = new System.Drawing.Size(88, 13);
+            this.lbl_hasta.TabIndex = 26;
+            this.lbl_hasta.Text = "Mostrar hasta:";
+            // 
+            // lbl_desde
+            // 
+            this.lbl_desde.AutoSize = true;
+            this.lbl_desde.Location = new System.Drawing.Point(11, 48);
+            this.lbl_desde.Name = "lbl_desde";
+            this.lbl_desde.Size = new System.Drawing.Size(91, 13);
+            this.lbl_desde.TabIndex = 25;
+            this.lbl_desde.Text = "Mostrar desde:";
+            // 
+            // gb_actual
+            // 
+            this.gb_actual.BackColor = System.Drawing.Color.Transparent;
+            this.gb_actual.Controls.Add(this.txt_hora);
+            this.gb_actual.Controls.Add(this.txt_dia);
+            this.gb_actual.Controls.Add(this.lbl_hora);
+            this.gb_actual.Controls.Add(this.lbl_dia);
+            this.gb_actual.Controls.Add(this.txt_evento);
+            this.gb_actual.Controls.Add(this.lbl_evento);
+            this.gb_actual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_actual.Location = new System.Drawing.Point(529, 11);
+            this.gb_actual.Name = "gb_actual";
+            this.gb_actual.Size = new System.Drawing.Size(178, 103);
+            this.gb_actual.TabIndex = 44;
+            this.gb_actual.TabStop = false;
+            this.gb_actual.Text = "Simulación:";
+            // 
+            // txt_hora
+            // 
+            this.txt_hora.CausesValidation = false;
+            this.txt_hora.Enabled = false;
+            this.txt_hora.Location = new System.Drawing.Point(67, 47);
+            this.txt_hora.Name = "txt_hora";
+            this.txt_hora.ReadOnly = true;
+            this.txt_hora.Size = new System.Drawing.Size(100, 20);
+            this.txt_hora.TabIndex = 49;
+            // 
+            // txt_dia
+            // 
+            this.txt_dia.CausesValidation = false;
+            this.txt_dia.Enabled = false;
+            this.txt_dia.Location = new System.Drawing.Point(67, 21);
+            this.txt_dia.Name = "txt_dia";
+            this.txt_dia.ReadOnly = true;
+            this.txt_dia.Size = new System.Drawing.Size(100, 20);
+            this.txt_dia.TabIndex = 48;
+            // 
+            // lbl_hora
+            // 
+            this.lbl_hora.AutoSize = true;
+            this.lbl_hora.Location = new System.Drawing.Point(10, 50);
+            this.lbl_hora.Name = "lbl_hora";
+            this.lbl_hora.Size = new System.Drawing.Size(38, 13);
+            this.lbl_hora.TabIndex = 47;
+            this.lbl_hora.Text = "Hora:";
+            // 
+            // lbl_dia
+            // 
+            this.lbl_dia.AutoSize = true;
+            this.lbl_dia.Location = new System.Drawing.Point(10, 24);
+            this.lbl_dia.Name = "lbl_dia";
+            this.lbl_dia.Size = new System.Drawing.Size(32, 13);
+            this.lbl_dia.TabIndex = 46;
+            this.lbl_dia.Text = "Día:";
+            // 
+            // txt_evento
+            // 
+            this.txt_evento.CausesValidation = false;
+            this.txt_evento.Enabled = false;
+            this.txt_evento.Location = new System.Drawing.Point(67, 74);
+            this.txt_evento.Name = "txt_evento";
+            this.txt_evento.ReadOnly = true;
+            this.txt_evento.Size = new System.Drawing.Size(100, 20);
+            this.txt_evento.TabIndex = 17;
+            // 
+            // lbl_evento
+            // 
+            this.lbl_evento.AutoSize = true;
+            this.lbl_evento.Location = new System.Drawing.Point(10, 77);
+            this.lbl_evento.Name = "lbl_evento";
+            this.lbl_evento.Size = new System.Drawing.Size(51, 13);
+            this.lbl_evento.TabIndex = 45;
+            this.lbl_evento.Text = "Evento:";
+            // 
+            // gb_llegadas
+            // 
+            this.gb_llegadas.BackColor = System.Drawing.Color.Transparent;
+            this.gb_llegadas.Controls.Add(this.txt_llegadas_mediaxhora);
+            this.gb_llegadas.Controls.Add(this.lbl_llegadas_mediaxhora);
+            this.gb_llegadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_llegadas.Location = new System.Drawing.Point(12, 120);
+            this.gb_llegadas.Name = "gb_llegadas";
+            this.gb_llegadas.Size = new System.Drawing.Size(173, 48);
+            this.gb_llegadas.TabIndex = 27;
+            this.gb_llegadas.TabStop = false;
+            this.gb_llegadas.Text = "Llegadas Clientes (hora):";
+            // 
+            // txt_llegadas_mediaxhora
+            // 
+            this.txt_llegadas_mediaxhora.Location = new System.Drawing.Point(89, 19);
+            this.txt_llegadas_mediaxhora.Name = "txt_llegadas_mediaxhora";
+            this.txt_llegadas_mediaxhora.Size = new System.Drawing.Size(34, 20);
+            this.txt_llegadas_mediaxhora.TabIndex = 4;
+            this.txt_llegadas_mediaxhora.Text = "30";
+            // 
+            // lbl_llegadas_mediaxhora
+            // 
+            this.lbl_llegadas_mediaxhora.AutoSize = true;
+            this.lbl_llegadas_mediaxhora.Location = new System.Drawing.Point(38, 22);
+            this.lbl_llegadas_mediaxhora.Name = "lbl_llegadas_mediaxhora";
+            this.lbl_llegadas_mediaxhora.Size = new System.Drawing.Size(45, 13);
+            this.lbl_llegadas_mediaxhora.TabIndex = 28;
+            this.lbl_llegadas_mediaxhora.Text = "Media:";
+            // 
+            // gb_servir
+            // 
+            this.gb_servir.BackColor = System.Drawing.Color.Transparent;
+            this.gb_servir.Controls.Add(this.txt_servir_b);
+            this.gb_servir.Controls.Add(this.lbl_servir_b);
+            this.gb_servir.Controls.Add(this.txt_servir_a);
+            this.gb_servir.Controls.Add(this.lbl_servir_a);
+            this.gb_servir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_servir.Location = new System.Drawing.Point(364, 121);
+            this.gb_servir.Name = "gb_servir";
+            this.gb_servir.Size = new System.Drawing.Size(159, 48);
+            this.gb_servir.TabIndex = 31;
+            this.gb_servir.TabStop = false;
+            this.gb_servir.Text = "Servir Cervezas (min):";
+            // 
+            // txt_servir_b
+            // 
+            this.txt_servir_b.Location = new System.Drawing.Point(102, 19);
+            this.txt_servir_b.Name = "txt_servir_b";
+            this.txt_servir_b.Size = new System.Drawing.Size(37, 20);
+            this.txt_servir_b.TabIndex = 7;
+            this.txt_servir_b.Text = "2";
+            // 
+            // lbl_servir_b
+            // 
+            this.lbl_servir_b.AutoSize = true;
+            this.lbl_servir_b.Location = new System.Drawing.Point(77, 22);
+            this.lbl_servir_b.Name = "lbl_servir_b";
+            this.lbl_servir_b.Size = new System.Drawing.Size(19, 13);
+            this.lbl_servir_b.TabIndex = 33;
+            this.lbl_servir_b.Text = "B:";
+            // 
+            // txt_servir_a
+            // 
+            this.txt_servir_a.Location = new System.Drawing.Point(34, 19);
+            this.txt_servir_a.Name = "txt_servir_a";
+            this.txt_servir_a.Size = new System.Drawing.Size(37, 20);
+            this.txt_servir_a.TabIndex = 6;
+            this.txt_servir_a.Text = "1";
+            // 
+            // lbl_servir_a
+            // 
+            this.lbl_servir_a.AutoSize = true;
+            this.lbl_servir_a.Location = new System.Drawing.Point(9, 22);
+            this.lbl_servir_a.Name = "lbl_servir_a";
+            this.lbl_servir_a.Size = new System.Drawing.Size(19, 13);
+            this.lbl_servir_a.TabIndex = 32;
+            this.lbl_servir_a.Text = "A:";
+            // 
+            // gb_lavar
+            // 
+            this.gb_lavar.BackColor = System.Drawing.Color.Transparent;
+            this.gb_lavar.Controls.Add(this.txt_const_lavar);
+            this.gb_lavar.Controls.Add(this.lbl_lavar_const);
+            this.gb_lavar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_lavar.Location = new System.Drawing.Point(364, 66);
+            this.gb_lavar.Name = "gb_lavar";
+            this.gb_lavar.Size = new System.Drawing.Size(159, 48);
+            this.gb_lavar.TabIndex = 34;
+            this.gb_lavar.TabStop = false;
+            this.gb_lavar.Text = "Lavar Vasos (seg):";
+            // 
+            // txt_const_lavar
+            // 
+            this.txt_const_lavar.Location = new System.Drawing.Point(87, 19);
+            this.txt_const_lavar.Name = "txt_const_lavar";
+            this.txt_const_lavar.Size = new System.Drawing.Size(37, 20);
+            this.txt_const_lavar.TabIndex = 8;
+            this.txt_const_lavar.Text = "15";
+            // 
+            // lbl_lavar_const
+            // 
+            this.lbl_lavar_const.AutoSize = true;
+            this.lbl_lavar_const.Location = new System.Drawing.Point(13, 22);
+            this.lbl_lavar_const.Name = "lbl_lavar_const";
+            this.lbl_lavar_const.Size = new System.Drawing.Size(68, 13);
+            this.lbl_lavar_const.TabIndex = 35;
+            this.lbl_lavar_const.Text = "Constante:";
+            // 
+            // gb_recoger
+            // 
+            this.gb_recoger.BackColor = System.Drawing.Color.Transparent;
+            this.gb_recoger.Controls.Add(this.lbl_recoge_masveinte);
+            this.gb_recoger.Controls.Add(this.txt_recoge_masviente);
+            this.gb_recoger.Controls.Add(this.txt_recoge_diezyveinte);
+            this.gb_recoger.Controls.Add(this.lbl_recoge_diezyveinte);
+            this.gb_recoger.Controls.Add(this.txt_recoge_menosdiez);
+            this.gb_recoger.Controls.Add(this.lbl_recoge_menordiez);
+            this.gb_recoger.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_recoger.Location = new System.Drawing.Point(191, 11);
+            this.gb_recoger.Name = "gb_recoger";
+            this.gb_recoger.Size = new System.Drawing.Size(167, 103);
+            this.gb_recoger.TabIndex = 36;
+            this.gb_recoger.TabStop = false;
+            this.gb_recoger.Text = "Recoger Vasos (min):";
+            // 
+            // lbl_recoge_masveinte
+            // 
+            this.lbl_recoge_masveinte.AutoSize = true;
+            this.lbl_recoge_masveinte.Location = new System.Drawing.Point(25, 74);
+            this.lbl_recoge_masveinte.Name = "lbl_recoge_masveinte";
+            this.lbl_recoge_masveinte.Size = new System.Drawing.Size(70, 13);
+            this.lbl_recoge_masveinte.TabIndex = 39;
+            this.lbl_recoge_masveinte.Text = "Más de 20:";
+            // 
+            // txt_recoge_masviente
+            // 
+            this.txt_recoge_masviente.Location = new System.Drawing.Point(100, 70);
+            this.txt_recoge_masviente.Name = "txt_recoge_masviente";
+            this.txt_recoge_masviente.Size = new System.Drawing.Size(54, 20);
+            this.txt_recoge_masviente.TabIndex = 11;
+            this.txt_recoge_masviente.Text = "8";
+            // 
+            // txt_recoge_diezyveinte
+            // 
+            this.txt_recoge_diezyveinte.Location = new System.Drawing.Point(100, 44);
+            this.txt_recoge_diezyveinte.Name = "txt_recoge_diezyveinte";
+            this.txt_recoge_diezyveinte.Size = new System.Drawing.Size(54, 20);
+            this.txt_recoge_diezyveinte.TabIndex = 10;
+            this.txt_recoge_diezyveinte.Text = "6";
+            // 
+            // lbl_recoge_diezyveinte
+            // 
+            this.lbl_recoge_diezyveinte.AutoSize = true;
+            this.lbl_recoge_diezyveinte.Location = new System.Drawing.Point(8, 47);
+            this.lbl_recoge_diezyveinte.Name = "lbl_recoge_diezyveinte";
+            this.lbl_recoge_diezyveinte.Size = new System.Drawing.Size(87, 13);
+            this.lbl_recoge_diezyveinte.TabIndex = 38;
+            this.lbl_recoge_diezyveinte.Text = "Entre 10 y 20:";
+            // 
+            // txt_recoge_menosdiez
+            // 
+            this.txt_recoge_menosdiez.Location = new System.Drawing.Point(100, 18);
+            this.txt_recoge_menosdiez.Name = "txt_recoge_menosdiez";
+            this.txt_recoge_menosdiez.Size = new System.Drawing.Size(54, 20);
+            this.txt_recoge_menosdiez.TabIndex = 9;
+            this.txt_recoge_menosdiez.Text = "4";
+            // 
+            // lbl_recoge_menordiez
+            // 
+            this.lbl_recoge_menordiez.AutoSize = true;
+            this.lbl_recoge_menordiez.Location = new System.Drawing.Point(11, 21);
+            this.lbl_recoge_menordiez.Name = "lbl_recoge_menordiez";
+            this.lbl_recoge_menordiez.Size = new System.Drawing.Size(84, 13);
+            this.lbl_recoge_menordiez.TabIndex = 37;
+            this.lbl_recoge_menordiez.Text = "Menos de 10:";
+            // 
+            // gb_clientes_a_servir
+            // 
+            this.gb_clientes_a_servir.BackColor = System.Drawing.Color.Transparent;
+            this.gb_clientes_a_servir.Controls.Add(this.lbl_maximo_cola);
+            this.gb_clientes_a_servir.Controls.Add(this.txt_maximo_cola);
+            this.gb_clientes_a_servir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_clientes_a_servir.Location = new System.Drawing.Point(191, 120);
+            this.gb_clientes_a_servir.Name = "gb_clientes_a_servir";
+            this.gb_clientes_a_servir.Size = new System.Drawing.Size(167, 49);
+            this.gb_clientes_a_servir.TabIndex = 29;
+            this.gb_clientes_a_servir.TabStop = false;
+            this.gb_clientes_a_servir.Text = "Cola de Clientes a Servir:";
+            // 
+            // lbl_maximo_cola
+            // 
+            this.lbl_maximo_cola.AutoSize = true;
+            this.lbl_maximo_cola.Location = new System.Drawing.Point(30, 22);
+            this.lbl_maximo_cola.Name = "lbl_maximo_cola";
+            this.lbl_maximo_cola.Size = new System.Drawing.Size(53, 13);
+            this.lbl_maximo_cola.TabIndex = 30;
+            this.lbl_maximo_cola.Text = "Maximo:";
+            // 
+            // txt_maximo_cola
+            // 
+            this.txt_maximo_cola.Location = new System.Drawing.Point(89, 19);
+            this.txt_maximo_cola.Name = "txt_maximo_cola";
+            this.txt_maximo_cola.Size = new System.Drawing.Size(34, 20);
+            this.txt_maximo_cola.TabIndex = 5;
+            this.txt_maximo_cola.Text = "4";
+            // 
             // TP7_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SaddleBrown;
             this.BackgroundImage = global::TP_N_7___Bar.Properties.Resources.wooden_background;
-            this.ClientSize = new System.Drawing.Size(1414, 561);
-            this.Controls.Add(this.txt_vasos_iniciales);
-            this.Controls.Add(this.lbl_vasos_iniciales);
+            this.ClientSize = new System.Drawing.Size(989, 561);
             this.Controls.Add(this.gb_clientes_a_servir);
             this.Controls.Add(this.gb_recoger);
             this.Controls.Add(this.gb_lavar);
@@ -1006,7 +1010,7 @@
             this.Controls.Add(this.gb_datos_iniciales);
             this.Controls.Add(this.gb_actual);
             this.Name = "TP7_Principal";
-            this.Text = "TP7_Principal";
+            this.Text = "Trabajo Practico N° 7 - Facundo Forcada - 68019";
             this.gb_continua.ResumeLayout(false);
             this.gb_continua.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_simulaciones)).EndInit();
@@ -1027,15 +1031,12 @@
             this.gb_clientes_a_servir.ResumeLayout(false);
             this.gb_clientes_a_servir.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox gb_continua;
-        private System.Windows.Forms.TextBox txt_valor_h;
         private System.Windows.Forms.TextBox txt_litros_vaso;
-        private System.Windows.Forms.Label lbl_valor_h;
         private System.Windows.Forms.Label lbl_litros_vaso;
         private System.Windows.Forms.DataGridView dgv_simulaciones;
         private System.Windows.Forms.GroupBox gb_solucion;
@@ -1050,8 +1051,8 @@
         private System.Windows.Forms.GroupBox gb_datos_iniciales;
         private System.Windows.Forms.TextBox txt_hasta;
         private System.Windows.Forms.TextBox txt_desde;
-        private System.Windows.Forms.TextBox txt_eventos;
-        private System.Windows.Forms.Label lbl_eventos;
+        private System.Windows.Forms.TextBox txt_dias;
+        private System.Windows.Forms.Label lbl_dias;
         private System.Windows.Forms.Label lbl_hasta;
         private System.Windows.Forms.Label lbl_desde;
         private System.Windows.Forms.GroupBox gb_actual;
@@ -1080,8 +1081,6 @@
         private System.Windows.Forms.GroupBox gb_clientes_a_servir;
         private System.Windows.Forms.Label lbl_maximo_cola;
         private System.Windows.Forms.TextBox txt_maximo_cola;
-        private System.Windows.Forms.Label lbl_vasos_iniciales;
-        private System.Windows.Forms.TextBox txt_vasos_iniciales;
         private System.Windows.Forms.DataGridViewTextBoxColumn reloj;
         private System.Windows.Forms.DataGridViewTextBoxColumn evento;
         private System.Windows.Forms.DataGridViewTextBoxColumn random_llegada;
@@ -1110,5 +1109,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn total_consumieron_masuna;
         private System.Windows.Forms.DataGridViewTextBoxColumn espera_maxima;
         private System.Windows.Forms.DataGridViewTextBoxColumn espera_promedio;
+        private System.Windows.Forms.TextBox txt_hora;
+        private System.Windows.Forms.TextBox txt_dia;
+        private System.Windows.Forms.Label lbl_hora;
+        private System.Windows.Forms.Label lbl_dia;
     }
 }

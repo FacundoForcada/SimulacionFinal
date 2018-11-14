@@ -131,7 +131,7 @@ namespace Colas
         {
             double retorno = 0.0;
             //double litros = ClienteActual.LitrosCombustible;
-            double h = 0.1;
+            //double h = 1;
             double k = 0.0;
             do
             {
