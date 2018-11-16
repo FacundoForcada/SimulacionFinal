@@ -14,7 +14,7 @@ namespace Montecarlo.TablaDistribucion
             GenerarTablaRandom();
         }
 
-        public DistribucionAleatoria(double valor, double probabilidadAsociada)
+        public DistribucionAleatoria( double valor, double probabilidadAsociada)
         {
             var probabilidad = new Probabilidad(valor, probabilidadAsociada);
 
@@ -30,7 +30,7 @@ namespace Montecarlo.TablaDistribucion
             GenerarTablaRandom();
         }
 
-        public void AgregarProbabilidad(double valor, double probabilidadAsociada)
+        public void AgregarProbabilidad(string tipo, double valor, double probabilidadAsociada)
         {
             var probabilidad = new Probabilidad(valor, probabilidadAsociada);
 

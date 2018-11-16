@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alfombra.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Colas\ColaFifo.cs" />
     <Compile Include="Colas\ICola.cs" />

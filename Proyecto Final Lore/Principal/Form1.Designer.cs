@@ -30,30 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_simulaciones = new System.Windows.Forms.DataGridView();
-            this.reloj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proxima_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo_vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cola_recepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_recepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proximo_fin_recepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cola_balanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_balanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proximo_fin_balanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cola_darsenas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_darsena_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proximo_fin_darsena_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.atendidos_darsena_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_darsena_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proximo_fin_darsena_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.atendidos_darsena_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_atendidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sin_atender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.permanencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_datos_iniciales = new System.Windows.Forms.GroupBox();
             this.gb_recalibracion = new System.Windows.Forms.GroupBox();
-            this.txt_puesta_alfombras = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txt_puesta_alfombras = new System.Windows.Forms.MaskedTextBox();
             this.gb_darsenas = new System.Windows.Forms.GroupBox();
             this.txt_aspirado_b = new System.Windows.Forms.TextBox();
             this.lbl_darsenas_b = new System.Windows.Forms.Label();
@@ -65,8 +44,7 @@
             this.txt_lavado_a = new System.Windows.Forms.TextBox();
             this.lbl_balanza_a = new System.Windows.Forms.Label();
             this.gb_recepcion = new System.Windows.Forms.GroupBox();
-            this.txt_quitado_alfombras = new System.Windows.Forms.TextBox();
-            this.lbl_recepcion_a = new System.Windows.Forms.Label();
+            this.txt_tiempoQA = new System.Windows.Forms.MaskedTextBox();
             this.gb_llegadas = new System.Windows.Forms.GroupBox();
             this.txt_llegadas_media = new System.Windows.Forms.TextBox();
             this.lbl_llegadas_lambda = new System.Windows.Forms.Label();
@@ -77,14 +55,39 @@
             this.lbl_hasta = new System.Windows.Forms.Label();
             this.lbl_desde = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_evento = new System.Windows.Forms.TextBox();
+            this.txt_hora = new System.Windows.Forms.TextBox();
+            this.txt_dia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_detener = new System.Windows.Forms.Button();
             this.btn_simular = new System.Windows.Forms.Button();
+            this.reloj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proxima_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cola_QA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_QA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_QA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cola_aspirado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_aspirado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_balanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cola_LS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_lavadero1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_lavadero1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.atendidos_lavadero1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_lavadero2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_lavadero2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.atendidos_lavadero_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.humedad_auto2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_secado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_secado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cola_PA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_PA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_PA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_atendidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.permanencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.max_long_cola_QA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_simulaciones)).BeginInit();
             this.gb_datos_iniciales.SuspendLayout();
             this.gb_recalibracion.SuspendLayout();
@@ -120,29 +123,33 @@
             this.reloj,
             this.evento,
             this.proxima_llegada,
-            this.tipo_vehiculo,
-            this.cola_recepcion,
-            this.estado_recepcion,
-            this.proximo_fin_recepcion,
-            this.cola_balanza,
-            this.estado_balanza,
+            this.cola_QA,
+            this.estado_QA,
+            this.proximo_fin_QA,
+            this.cola_aspirado,
+            this.estado_aspirado,
             this.proximo_fin_balanza,
-            this.cola_darsenas,
-            this.estado_darsena_1,
-            this.proximo_fin_darsena_1,
-            this.atendidos_darsena_1,
-            this.estado_darsena_2,
-            this.proximo_fin_darsena_2,
-            this.atendidos_darsena_2,
+            this.cola_LS,
+            this.estado_lavadero1,
+            this.proximo_fin_lavadero1,
+            this.atendidos_lavadero1,
+            this.estado_lavadero2,
+            this.proximo_fin_lavadero2,
+            this.atendidos_lavadero_2,
+            this.humedad_auto2,
+            this.estado_secado,
+            this.proximo_fin_secado,
+            this.cola_PA,
+            this.estado_PA,
+            this.proximo_fin_PA,
             this.total_atendidos,
-            this.sin_atender,
-            this.permanencia});
+            this.permanencia,
+            this.max_long_cola_QA});
             this.dgv_simulaciones.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_simulaciones.EnableHeadersVisualStyles = false;
             this.dgv_simulaciones.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.dgv_simulaciones.Location = new System.Drawing.Point(12, 179);
             this.dgv_simulaciones.Name = "dgv_simulaciones";
-            this.dgv_simulaciones.ReadOnly = true;
             this.dgv_simulaciones.RowHeadersVisible = false;
             this.dgv_simulaciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_simulaciones.RowTemplate.ReadOnly = true;
@@ -154,227 +161,6 @@
             this.dgv_simulaciones.ShowRowErrors = false;
             this.dgv_simulaciones.Size = new System.Drawing.Size(1137, 385);
             this.dgv_simulaciones.TabIndex = 29;
-            // 
-            // reloj
-            // 
-            this.reloj.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.reloj.FillWeight = 1F;
-            this.reloj.Frozen = true;
-            this.reloj.HeaderText = "Reloj";
-            this.reloj.Name = "reloj";
-            this.reloj.ReadOnly = true;
-            this.reloj.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.reloj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.reloj.Width = 55;
-            // 
-            // evento
-            // 
-            this.evento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.evento.FillWeight = 1F;
-            this.evento.Frozen = true;
-            this.evento.HeaderText = "Evento";
-            this.evento.Name = "evento";
-            this.evento.ReadOnly = true;
-            this.evento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.evento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.evento.Width = 80;
-            // 
-            // proxima_llegada
-            // 
-            this.proxima_llegada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.proxima_llegada.FillWeight = 1F;
-            this.proxima_llegada.Frozen = true;
-            this.proxima_llegada.HeaderText = "Próxima Llegada";
-            this.proxima_llegada.Name = "proxima_llegada";
-            this.proxima_llegada.ReadOnly = true;
-            this.proxima_llegada.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.proxima_llegada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proxima_llegada.Width = 60;
-            // 
-            // tipo_vehiculo
-            // 
-            this.tipo_vehiculo.FillWeight = 80F;
-            this.tipo_vehiculo.Frozen = true;
-            this.tipo_vehiculo.HeaderText = "Tipo";
-            this.tipo_vehiculo.Name = "tipo_vehiculo";
-            this.tipo_vehiculo.ReadOnly = true;
-            this.tipo_vehiculo.Width = 60;
-            // 
-            // cola_recepcion
-            // 
-            this.cola_recepcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.cola_recepcion.FillWeight = 1F;
-            this.cola_recepcion.HeaderText = "Cola Recepción";
-            this.cola_recepcion.Name = "cola_recepcion";
-            this.cola_recepcion.ReadOnly = true;
-            this.cola_recepcion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cola_recepcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cola_recepcion.Width = 70;
-            // 
-            // estado_recepcion
-            // 
-            this.estado_recepcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.estado_recepcion.FillWeight = 1F;
-            this.estado_recepcion.HeaderText = "Estado Recepción";
-            this.estado_recepcion.Name = "estado_recepcion";
-            this.estado_recepcion.ReadOnly = true;
-            this.estado_recepcion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.estado_recepcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_recepcion.Width = 140;
-            // 
-            // proximo_fin_recepcion
-            // 
-            this.proximo_fin_recepcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.proximo_fin_recepcion.FillWeight = 1F;
-            this.proximo_fin_recepcion.HeaderText = "Próximo Fin Recepción";
-            this.proximo_fin_recepcion.Name = "proximo_fin_recepcion";
-            this.proximo_fin_recepcion.ReadOnly = true;
-            this.proximo_fin_recepcion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.proximo_fin_recepcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_recepcion.Width = 85;
-            // 
-            // cola_balanza
-            // 
-            this.cola_balanza.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.cola_balanza.FillWeight = 1F;
-            this.cola_balanza.HeaderText = "Cola Balanza";
-            this.cola_balanza.Name = "cola_balanza";
-            this.cola_balanza.ReadOnly = true;
-            this.cola_balanza.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cola_balanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cola_balanza.Width = 60;
-            // 
-            // estado_balanza
-            // 
-            this.estado_balanza.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.estado_balanza.FillWeight = 1F;
-            this.estado_balanza.HeaderText = "Estado Balanza";
-            this.estado_balanza.Name = "estado_balanza";
-            this.estado_balanza.ReadOnly = true;
-            this.estado_balanza.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.estado_balanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_balanza.Width = 140;
-            // 
-            // proximo_fin_balanza
-            // 
-            this.proximo_fin_balanza.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.proximo_fin_balanza.FillWeight = 1F;
-            this.proximo_fin_balanza.HeaderText = "Próximo Fin Balanza";
-            this.proximo_fin_balanza.Name = "proximo_fin_balanza";
-            this.proximo_fin_balanza.ReadOnly = true;
-            this.proximo_fin_balanza.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.proximo_fin_balanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_balanza.Width = 85;
-            // 
-            // cola_darsenas
-            // 
-            this.cola_darsenas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.cola_darsenas.FillWeight = 1F;
-            this.cola_darsenas.HeaderText = "Cola Dársenas";
-            this.cola_darsenas.Name = "cola_darsenas";
-            this.cola_darsenas.ReadOnly = true;
-            this.cola_darsenas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cola_darsenas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cola_darsenas.Width = 70;
-            // 
-            // estado_darsena_1
-            // 
-            this.estado_darsena_1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.estado_darsena_1.FillWeight = 1F;
-            this.estado_darsena_1.HeaderText = "Estado Dársena 1";
-            this.estado_darsena_1.Name = "estado_darsena_1";
-            this.estado_darsena_1.ReadOnly = true;
-            this.estado_darsena_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.estado_darsena_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_darsena_1.Width = 140;
-            // 
-            // proximo_fin_darsena_1
-            // 
-            this.proximo_fin_darsena_1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.proximo_fin_darsena_1.FillWeight = 1F;
-            this.proximo_fin_darsena_1.HeaderText = "Próximo Fin Dársena 1";
-            this.proximo_fin_darsena_1.Name = "proximo_fin_darsena_1";
-            this.proximo_fin_darsena_1.ReadOnly = true;
-            this.proximo_fin_darsena_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.proximo_fin_darsena_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_darsena_1.Width = 85;
-            // 
-            // atendidos_darsena_1
-            // 
-            this.atendidos_darsena_1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.atendidos_darsena_1.FillWeight = 1F;
-            this.atendidos_darsena_1.HeaderText = "Atendidos Dársena 1";
-            this.atendidos_darsena_1.Name = "atendidos_darsena_1";
-            this.atendidos_darsena_1.ReadOnly = true;
-            this.atendidos_darsena_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.atendidos_darsena_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.atendidos_darsena_1.Width = 80;
-            // 
-            // estado_darsena_2
-            // 
-            this.estado_darsena_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.estado_darsena_2.FillWeight = 1F;
-            this.estado_darsena_2.HeaderText = "Estado Dársena 2";
-            this.estado_darsena_2.Name = "estado_darsena_2";
-            this.estado_darsena_2.ReadOnly = true;
-            this.estado_darsena_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.estado_darsena_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_darsena_2.Width = 140;
-            // 
-            // proximo_fin_darsena_2
-            // 
-            this.proximo_fin_darsena_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.proximo_fin_darsena_2.FillWeight = 1F;
-            this.proximo_fin_darsena_2.HeaderText = "Próximo Fin Dársena 2";
-            this.proximo_fin_darsena_2.Name = "proximo_fin_darsena_2";
-            this.proximo_fin_darsena_2.ReadOnly = true;
-            this.proximo_fin_darsena_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.proximo_fin_darsena_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_darsena_2.Width = 85;
-            // 
-            // atendidos_darsena_2
-            // 
-            this.atendidos_darsena_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.atendidos_darsena_2.FillWeight = 1F;
-            this.atendidos_darsena_2.HeaderText = "Atendidos Dársena 2";
-            this.atendidos_darsena_2.Name = "atendidos_darsena_2";
-            this.atendidos_darsena_2.ReadOnly = true;
-            this.atendidos_darsena_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.atendidos_darsena_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.atendidos_darsena_2.Width = 80;
-            // 
-            // total_atendidos
-            // 
-            this.total_atendidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.total_atendidos.FillWeight = 1F;
-            this.total_atendidos.HeaderText = "Total Atendidos";
-            this.total_atendidos.Name = "total_atendidos";
-            this.total_atendidos.ReadOnly = true;
-            this.total_atendidos.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.total_atendidos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.total_atendidos.Width = 70;
-            // 
-            // sin_atender
-            // 
-            this.sin_atender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.sin_atender.FillWeight = 1F;
-            this.sin_atender.HeaderText = "Total Sin Atender";
-            this.sin_atender.Name = "sin_atender";
-            this.sin_atender.ReadOnly = true;
-            this.sin_atender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.sin_atender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.sin_atender.Width = 70;
-            // 
-            // permanencia
-            // 
-            this.permanencia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.permanencia.FillWeight = 1F;
-            this.permanencia.HeaderText = "Permanencia Promedio";
-            this.permanencia.Name = "permanencia";
-            this.permanencia.ReadOnly = true;
-            this.permanencia.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.permanencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.permanencia.Width = 90;
             // 
             // gb_datos_iniciales
             // 
@@ -400,7 +186,6 @@
             // gb_recalibracion
             // 
             this.gb_recalibracion.Controls.Add(this.txt_puesta_alfombras);
-            this.gb_recalibracion.Controls.Add(this.label1);
             this.gb_recalibracion.Location = new System.Drawing.Point(767, 13);
             this.gb_recalibracion.Name = "gb_recalibracion";
             this.gb_recalibracion.Size = new System.Drawing.Size(152, 82);
@@ -410,22 +195,13 @@
             // 
             // txt_puesta_alfombras
             // 
-            this.txt_puesta_alfombras.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_puesta_alfombras.Enabled = false;
-            this.txt_puesta_alfombras.Location = new System.Drawing.Point(15, 31);
+            this.txt_puesta_alfombras.Location = new System.Drawing.Point(26, 31);
+            this.txt_puesta_alfombras.Mask = "00:00:00";
             this.txt_puesta_alfombras.Name = "txt_puesta_alfombras";
-            this.txt_puesta_alfombras.Size = new System.Drawing.Size(37, 20);
+            this.txt_puesta_alfombras.Size = new System.Drawing.Size(100, 20);
             this.txt_puesta_alfombras.TabIndex = 5;
-            this.txt_puesta_alfombras.Text = "3";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Minutos";
+            this.txt_puesta_alfombras.Text = "000300";
+            this.txt_puesta_alfombras.ValidatingType = typeof(System.DateTime);
             // 
             // gb_darsenas
             // 
@@ -523,8 +299,7 @@
             // 
             // gb_recepcion
             // 
-            this.gb_recepcion.Controls.Add(this.txt_quitado_alfombras);
-            this.gb_recepcion.Controls.Add(this.lbl_recepcion_a);
+            this.gb_recepcion.Controls.Add(this.txt_tiempoQA);
             this.gb_recepcion.Location = new System.Drawing.Point(319, 13);
             this.gb_recepcion.Name = "gb_recepcion";
             this.gb_recepcion.Size = new System.Drawing.Size(179, 82);
@@ -532,24 +307,15 @@
             this.gb_recepcion.TabStop = false;
             this.gb_recepcion.Text = "Quitado de Alfombras (QA)";
             // 
-            // txt_quitado_alfombras
+            // txt_tiempoQA
             // 
-            this.txt_quitado_alfombras.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_quitado_alfombras.Enabled = false;
-            this.txt_quitado_alfombras.Location = new System.Drawing.Point(48, 32);
-            this.txt_quitado_alfombras.Name = "txt_quitado_alfombras";
-            this.txt_quitado_alfombras.Size = new System.Drawing.Size(37, 20);
-            this.txt_quitado_alfombras.TabIndex = 3;
-            this.txt_quitado_alfombras.Text = "2";
-            // 
-            // lbl_recepcion_a
-            // 
-            this.lbl_recepcion_a.AutoSize = true;
-            this.lbl_recepcion_a.Location = new System.Drawing.Point(91, 36);
-            this.lbl_recepcion_a.Name = "lbl_recepcion_a";
-            this.lbl_recepcion_a.Size = new System.Drawing.Size(51, 13);
-            this.lbl_recepcion_a.TabIndex = 0;
-            this.lbl_recepcion_a.Text = "Minutos";
+            this.txt_tiempoQA.Location = new System.Drawing.Point(46, 31);
+            this.txt_tiempoQA.Mask = "00:00:00";
+            this.txt_tiempoQA.Name = "txt_tiempoQA";
+            this.txt_tiempoQA.Size = new System.Drawing.Size(100, 20);
+            this.txt_tiempoQA.TabIndex = 4;
+            this.txt_tiempoQA.Text = "000200";
+            this.txt_tiempoQA.ValidatingType = typeof(System.DateTime);
             // 
             // gb_llegadas
             // 
@@ -632,9 +398,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txt_evento);
+            this.groupBox1.Controls.Add(this.txt_hora);
+            this.groupBox1.Controls.Add(this.txt_dia);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
@@ -646,35 +412,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Simulación:";
             // 
-            // textBox1
+            // txt_evento
             // 
-            this.textBox1.CausesValidation = false;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(63, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.txt_evento.CausesValidation = false;
+            this.txt_evento.Enabled = false;
+            this.txt_evento.Location = new System.Drawing.Point(63, 71);
+            this.txt_evento.Name = "txt_evento";
+            this.txt_evento.ReadOnly = true;
+            this.txt_evento.Size = new System.Drawing.Size(100, 20);
+            this.txt_evento.TabIndex = 5;
             // 
-            // textBox2
+            // txt_hora
             // 
-            this.textBox2.CausesValidation = false;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(63, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.txt_hora.CausesValidation = false;
+            this.txt_hora.Enabled = false;
+            this.txt_hora.Location = new System.Drawing.Point(63, 45);
+            this.txt_hora.Name = "txt_hora";
+            this.txt_hora.ReadOnly = true;
+            this.txt_hora.Size = new System.Drawing.Size(100, 20);
+            this.txt_hora.TabIndex = 4;
             // 
-            // textBox3
+            // txt_dia
             // 
-            this.textBox3.CausesValidation = false;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(63, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 3;
+            this.txt_dia.CausesValidation = false;
+            this.txt_dia.Enabled = false;
+            this.txt_dia.Location = new System.Drawing.Point(63, 19);
+            this.txt_dia.Name = "txt_dia";
+            this.txt_dia.ReadOnly = true;
+            this.txt_dia.Size = new System.Drawing.Size(100, 20);
+            this.txt_dia.TabIndex = 3;
             // 
             // label3
             // 
@@ -717,7 +483,6 @@
             // 
             // btn_simular
             // 
-            this.btn_simular.Enabled = false;
             this.btn_simular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_simular.Location = new System.Drawing.Point(482, 127);
             this.btn_simular.Name = "btn_simular";
@@ -726,6 +491,229 @@
             this.btn_simular.Text = "SIMULAR";
             this.btn_simular.UseVisualStyleBackColor = true;
             this.btn_simular.Click += new System.EventHandler(this.btn_simular_Click);
+            // 
+            // reloj
+            // 
+            this.reloj.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.reloj.FillWeight = 1F;
+            this.reloj.Frozen = true;
+            this.reloj.HeaderText = "Reloj";
+            this.reloj.Name = "reloj";
+            this.reloj.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.reloj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.reloj.Width = 55;
+            // 
+            // evento
+            // 
+            this.evento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.evento.FillWeight = 1F;
+            this.evento.Frozen = true;
+            this.evento.HeaderText = "Evento";
+            this.evento.Name = "evento";
+            this.evento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.evento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.evento.Width = 80;
+            // 
+            // proxima_llegada
+            // 
+            this.proxima_llegada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proxima_llegada.FillWeight = 1F;
+            this.proxima_llegada.Frozen = true;
+            this.proxima_llegada.HeaderText = "Próxima Llegada";
+            this.proxima_llegada.Name = "proxima_llegada";
+            this.proxima_llegada.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proxima_llegada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proxima_llegada.Width = 60;
+            // 
+            // cola_QA
+            // 
+            this.cola_QA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.cola_QA.FillWeight = 1F;
+            this.cola_QA.HeaderText = "Cola Quitado Alfombras";
+            this.cola_QA.Name = "cola_QA";
+            this.cola_QA.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cola_QA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cola_QA.Width = 80;
+            // 
+            // estado_QA
+            // 
+            this.estado_QA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_QA.FillWeight = 1F;
+            this.estado_QA.HeaderText = "Estado Quitado Alfombras";
+            this.estado_QA.Name = "estado_QA";
+            this.estado_QA.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_QA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_QA.Width = 150;
+            // 
+            // proximo_fin_QA
+            // 
+            this.proximo_fin_QA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_QA.FillWeight = 1F;
+            this.proximo_fin_QA.HeaderText = "Próximo Fin Quitado Alfombras";
+            this.proximo_fin_QA.Name = "proximo_fin_QA";
+            this.proximo_fin_QA.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_QA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_QA.Width = 85;
+            // 
+            // cola_aspirado
+            // 
+            this.cola_aspirado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.cola_aspirado.FillWeight = 1F;
+            this.cola_aspirado.HeaderText = "Cola Aspirado";
+            this.cola_aspirado.Name = "cola_aspirado";
+            this.cola_aspirado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cola_aspirado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cola_aspirado.Width = 60;
+            // 
+            // estado_aspirado
+            // 
+            this.estado_aspirado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_aspirado.FillWeight = 1F;
+            this.estado_aspirado.HeaderText = "Estado Aspirado";
+            this.estado_aspirado.Name = "estado_aspirado";
+            this.estado_aspirado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_aspirado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_aspirado.Width = 140;
+            // 
+            // proximo_fin_balanza
+            // 
+            this.proximo_fin_balanza.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_balanza.FillWeight = 1F;
+            this.proximo_fin_balanza.HeaderText = "Próximo Fin Aspirado";
+            this.proximo_fin_balanza.Name = "proximo_fin_balanza";
+            this.proximo_fin_balanza.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_balanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_balanza.Width = 85;
+            // 
+            // cola_LS
+            // 
+            this.cola_LS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.cola_LS.FillWeight = 1F;
+            this.cola_LS.HeaderText = "Cola Lavado/Secado";
+            this.cola_LS.Name = "cola_LS";
+            this.cola_LS.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cola_LS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cola_LS.Width = 70;
+            // 
+            // estado_lavadero1
+            // 
+            this.estado_lavadero1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_lavadero1.FillWeight = 1F;
+            this.estado_lavadero1.HeaderText = "Estado Lavadero 1";
+            this.estado_lavadero1.Name = "estado_lavadero1";
+            this.estado_lavadero1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_lavadero1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_lavadero1.Width = 140;
+            // 
+            // proximo_fin_lavadero1
+            // 
+            this.proximo_fin_lavadero1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_lavadero1.FillWeight = 1F;
+            this.proximo_fin_lavadero1.HeaderText = "Próximo Fin Lavadero 1";
+            this.proximo_fin_lavadero1.Name = "proximo_fin_lavadero1";
+            this.proximo_fin_lavadero1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_lavadero1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_lavadero1.Width = 85;
+            // 
+            // atendidos_lavadero1
+            // 
+            this.atendidos_lavadero1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.atendidos_lavadero1.FillWeight = 1F;
+            this.atendidos_lavadero1.HeaderText = "Atendidos Lavadero 1";
+            this.atendidos_lavadero1.Name = "atendidos_lavadero1";
+            this.atendidos_lavadero1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.atendidos_lavadero1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.atendidos_lavadero1.Width = 80;
+            // 
+            // estado_lavadero2
+            // 
+            this.estado_lavadero2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_lavadero2.FillWeight = 1F;
+            this.estado_lavadero2.HeaderText = "Estado Lavadero 2";
+            this.estado_lavadero2.Name = "estado_lavadero2";
+            this.estado_lavadero2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_lavadero2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_lavadero2.Width = 140;
+            // 
+            // proximo_fin_lavadero2
+            // 
+            this.proximo_fin_lavadero2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_lavadero2.FillWeight = 1F;
+            this.proximo_fin_lavadero2.HeaderText = "Próximo Fin Lavadero 2";
+            this.proximo_fin_lavadero2.Name = "proximo_fin_lavadero2";
+            this.proximo_fin_lavadero2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_lavadero2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_lavadero2.Width = 85;
+            // 
+            // atendidos_lavadero_2
+            // 
+            this.atendidos_lavadero_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.atendidos_lavadero_2.FillWeight = 1F;
+            this.atendidos_lavadero_2.HeaderText = "Atendidos Lavadero 2";
+            this.atendidos_lavadero_2.Name = "atendidos_lavadero_2";
+            this.atendidos_lavadero_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.atendidos_lavadero_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.atendidos_lavadero_2.Width = 80;
+            // 
+            // humedad_auto2
+            // 
+            this.humedad_auto2.HeaderText = "Humedad Actual 2";
+            this.humedad_auto2.Name = "humedad_auto2";
+            // 
+            // estado_secado
+            // 
+            this.estado_secado.HeaderText = "Estado Secado";
+            this.estado_secado.Name = "estado_secado";
+            // 
+            // proximo_fin_secado
+            // 
+            this.proximo_fin_secado.HeaderText = "Proximo Fin Secadora";
+            this.proximo_fin_secado.Name = "proximo_fin_secado";
+            // 
+            // cola_PA
+            // 
+            this.cola_PA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.cola_PA.FillWeight = 1F;
+            this.cola_PA.HeaderText = "Cola Colocacion Alfombras";
+            this.cola_PA.Name = "cola_PA";
+            this.cola_PA.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cola_PA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cola_PA.Width = 70;
+            // 
+            // estado_PA
+            // 
+            this.estado_PA.HeaderText = "Estado Colocacion Alfombras";
+            this.estado_PA.Name = "estado_PA";
+            // 
+            // proximo_fin_PA
+            // 
+            this.proximo_fin_PA.HeaderText = "Prox. Fin Colocacion Alfombras";
+            this.proximo_fin_PA.Name = "proximo_fin_PA";
+            // 
+            // total_atendidos
+            // 
+            this.total_atendidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.total_atendidos.FillWeight = 1F;
+            this.total_atendidos.HeaderText = "Total Atendidos";
+            this.total_atendidos.Name = "total_atendidos";
+            this.total_atendidos.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.total_atendidos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.total_atendidos.Width = 70;
+            // 
+            // permanencia
+            // 
+            this.permanencia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.permanencia.FillWeight = 1F;
+            this.permanencia.HeaderText = "Permanencia Promedio";
+            this.permanencia.Name = "permanencia";
+            this.permanencia.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.permanencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.permanencia.Width = 90;
+            // 
+            // max_long_cola_QA
+            // 
+            this.max_long_cola_QA.HeaderText = "Maxima Long Cola";
+            this.max_long_cola_QA.Name = "max_long_cola_QA";
             // 
             // principal
             // 
@@ -761,26 +749,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_simulaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reloj;
-        private System.Windows.Forms.DataGridViewTextBoxColumn evento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proxima_llegada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_vehiculo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cola_recepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_recepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_recepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cola_balanza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_balanza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_balanza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cola_darsenas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_darsena_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_darsena_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn atendidos_darsena_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_darsena_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_darsena_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn atendidos_darsena_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total_atendidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sin_atender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn permanencia;
         private System.Windows.Forms.GroupBox gb_datos_iniciales;
         private System.Windows.Forms.GroupBox gb_recalibracion;
         private System.Windows.Forms.GroupBox gb_darsenas;
@@ -794,8 +762,6 @@
         private System.Windows.Forms.TextBox txt_lavado_a;
         private System.Windows.Forms.Label lbl_balanza_a;
         private System.Windows.Forms.GroupBox gb_recepcion;
-        private System.Windows.Forms.TextBox txt_quitado_alfombras;
-        private System.Windows.Forms.Label lbl_recepcion_a;
         private System.Windows.Forms.GroupBox gb_llegadas;
         private System.Windows.Forms.TextBox txt_llegadas_media;
         private System.Windows.Forms.Label lbl_llegadas_lambda;
@@ -806,16 +772,41 @@
         private System.Windows.Forms.Label lbl_hasta;
         private System.Windows.Forms.Label lbl_desde;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_evento;
+        private System.Windows.Forms.TextBox txt_hora;
+        private System.Windows.Forms.TextBox txt_dia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_detener;
         private System.Windows.Forms.Button btn_simular;
-        private System.Windows.Forms.TextBox txt_puesta_alfombras;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox txt_tiempoQA;
+        private System.Windows.Forms.MaskedTextBox txt_puesta_alfombras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reloj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn evento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proxima_llegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cola_QA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_QA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_QA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cola_aspirado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_aspirado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_balanza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cola_LS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_lavadero1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_lavadero1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn atendidos_lavadero1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_lavadero2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_lavadero2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn atendidos_lavadero_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn humedad_auto2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_secado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_secado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cola_PA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_PA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_PA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_atendidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn permanencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn max_long_cola_QA;
     }
 }
 
