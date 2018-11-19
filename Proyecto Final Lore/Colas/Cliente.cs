@@ -88,8 +88,8 @@ namespace Colas
             }
 
             double z1 = humedad;
-            double z2 = 0.0;
-            double z3 = 0.0;;
+            double z2 = -k * z1;
+            double z3 = z1 + (h * z2);
             double tiempo = 0.0;
 
             while (ComienzoSecado < hora )

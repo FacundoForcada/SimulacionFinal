@@ -267,8 +267,8 @@ namespace Principal
             var horaInicio = DateTime.Today.AddHours(8);
             var horaFin = DateTime.Today.AddHours(18);
             var media = double.Parse(txt_llegadas_media.Text) ;
-            media = media / 24;
-            media = media / 60;
+            //media = media / 24;
+            //media = media / 60;
             var lambda = 1 / media;
             IDistribucion distribucionLlegadas = new DistribucionExponencialNegativa(lambda);
             Llegada llegadas = new Llegada(distribucionLlegadas, horaInicio, horaFin);
@@ -350,9 +350,9 @@ namespace Principal
                         new Evento ("Cierre", llegadas.Cierre),
                         new Evento ("Fin de Quitado de Alfombras", quitadoAlfombras.ProximoFinAtencion),
                         new Evento ("Fin de Aspirado", aspirado.ProximoFinAtencion),
-                        new Evento ("Fin de secado", secadora.ProximoFinAtencion),
-                        new Evento ("Fin Lavadero 1", lavadero1.ProximoFinAtencion),
-                        new Evento ("Fin Lavadero 2", lavadero2.ProximoFinAtencion),
+                        new Evento ("Fin de Secado", secadora.ProximoFinAtencion),
+                        new Evento ("Fin de Lavadero 1", lavadero1.ProximoFinAtencion),
+                        new Evento ("Fin de Lavadero 2", lavadero2.ProximoFinAtencion),
                         new Evento ("Fin Puesta de alfombras", ponerAlfombra.ProximoFinAtencion),
                     };
 
@@ -376,7 +376,8 @@ namespace Principal
                                 Invoke(columnasInstance, numAutos);
                             }
                             break;
-                        case "Fin De Quitado de Alfombras ":
+
+                        case "Fin de Quitado de Alfombras":
                             var clienteSinAlfombra = quitadoAlfombras.FinAtencion();
                             if (lavadero1.EstaLibre())
                             {
@@ -388,7 +389,8 @@ namespace Principal
                             }
                             aspirado.LlegadaCliente(relojActual, clienteSinAlfombra);
                             break;
-                        case "Fin De Aspirado ":
+
+                        case "Fin de Aspirado":
                             var clienteAspirado = aspirado.FinAtencion();
                             if (clienteAspirado.Humedad == 0.0)
                             {
@@ -399,7 +401,7 @@ namespace Principal
                             }
                             break;
                       
-                        case "Fin De Lavadero 1 ":
+                        case "Fin de Lavadero 1":
                         
                             if (secadora.EstaLibre())
                             {
@@ -412,7 +414,7 @@ namespace Principal
                             }
                             
                             break;
-                        case "Fin De Lavadero 2 ":
+                        case "Fin de Lavadero 2":
                          
                             if (secadora.EstaLibre())
                             {
@@ -425,7 +427,7 @@ namespace Principal
                             }
                             
                             break;
-                        case "Fin De Secado":
+                        case "Fin de Secado":
                             Cliente clienteASecado = null;
                             Cliente clienteSecado = secadora.FinAtencion();
                             if (lavadero1.EstaBloqueado() & lavadero2.EstaBloqueado())
@@ -460,7 +462,7 @@ namespace Principal
 
                             }
                             
-                            if (clienteSecado.Alfombra.Estado == "Alfombra aspirada") 
+                            if (clienteSecado.Alfombra.Estado == "Alfombra Aspirada") 
                             {
                                 ponerAlfombra.LlegadaCliente(relojActual, clienteSecado);
                             }
@@ -624,7 +626,7 @@ namespace Principal
             {
                 dgv_simulaciones.Rows.Clear();
                 var cols = dgv_simulaciones.Columns.Count;
-                for (var c = cols - 1; c >= 19; c--)
+                for (var c = cols - 1; c >= 24; c--)
                 {
                     dgv_simulaciones.Columns.RemoveAt(c);
                 }

@@ -79,7 +79,6 @@
             this.estado_lavadero2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proximo_fin_lavadero2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.atendidos_lavadero_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.humedad_auto2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_secado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proximo_fin_secado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cola_PA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,7 +135,6 @@
             this.estado_lavadero2,
             this.proximo_fin_lavadero2,
             this.atendidos_lavadero_2,
-            this.humedad_auto2,
             this.estado_secado,
             this.proximo_fin_secado,
             this.cola_PA,
@@ -512,7 +510,7 @@
             this.evento.Name = "evento";
             this.evento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.evento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.evento.Width = 80;
+            this.evento.Width = 150;
             // 
             // proxima_llegada
             // 
@@ -573,7 +571,7 @@
             this.estado_aspirado.Name = "estado_aspirado";
             this.estado_aspirado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_aspirado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_aspirado.Width = 140;
+            this.estado_aspirado.Width = 200;
             // 
             // proximo_fin_balanza
             // 
@@ -593,7 +591,7 @@
             this.cola_LS.Name = "cola_LS";
             this.cola_LS.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cola_LS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cola_LS.Width = 70;
+            this.cola_LS.Width = 90;
             // 
             // estado_lavadero1
             // 
@@ -603,7 +601,7 @@
             this.estado_lavadero1.Name = "estado_lavadero1";
             this.estado_lavadero1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_lavadero1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_lavadero1.Width = 140;
+            this.estado_lavadero1.Width = 200;
             // 
             // proximo_fin_lavadero1
             // 
@@ -633,7 +631,7 @@
             this.estado_lavadero2.Name = "estado_lavadero2";
             this.estado_lavadero2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_lavadero2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_lavadero2.Width = 140;
+            this.estado_lavadero2.Width = 200;
             // 
             // proximo_fin_lavadero2
             // 
@@ -655,18 +653,15 @@
             this.atendidos_lavadero_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.atendidos_lavadero_2.Width = 80;
             // 
-            // humedad_auto2
-            // 
-            this.humedad_auto2.HeaderText = "Humedad Actual 2";
-            this.humedad_auto2.Name = "humedad_auto2";
-            // 
             // estado_secado
             // 
+            this.estado_secado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.estado_secado.HeaderText = "Estado Secado";
             this.estado_secado.Name = "estado_secado";
             // 
             // proximo_fin_secado
             // 
+            this.proximo_fin_secado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.proximo_fin_secado.HeaderText = "Proximo Fin Secadora";
             this.proximo_fin_secado.Name = "proximo_fin_secado";
             // 
@@ -682,13 +677,19 @@
             // 
             // estado_PA
             // 
+            this.estado_PA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.estado_PA.HeaderText = "Estado Colocacion Alfombras";
             this.estado_PA.Name = "estado_PA";
+            this.estado_PA.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_PA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // proximo_fin_PA
             // 
+            this.proximo_fin_PA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.proximo_fin_PA.HeaderText = "Prox. Fin Colocacion Alfombras";
             this.proximo_fin_PA.Name = "proximo_fin_PA";
+            this.proximo_fin_PA.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_PA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // total_atendidos
             // 
@@ -798,7 +799,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_lavadero2;
         private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_lavadero2;
         private System.Windows.Forms.DataGridViewTextBoxColumn atendidos_lavadero_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn humedad_auto2;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_secado;
         private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_secado;
         private System.Windows.Forms.DataGridViewTextBoxColumn cola_PA;

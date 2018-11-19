@@ -84,6 +84,7 @@ namespace Colas
             else
             {
                 demora = CalcularSecado();
+                var valor = ProximoFinAtencion; //para prueba
                 ProximoFinAtencion = hora.AddMinutes(demora);
             }
           
@@ -136,12 +137,12 @@ namespace Colas
                     CantidadAtendidos++;
                 }     
             }
-            else
-            {
                 if (Nombre == "Secadora")
                 {
                     Estado = "Libre";
-                }
+                     ClienteActual = null;
+                     ProximoFinAtencion = null;
+            }
                 else
                 {
                     if (Cola.Vacia())
@@ -170,7 +171,6 @@ namespace Colas
                         }
 
                         ActualizarFinAtencion(ProximoFinAtencion.Value);
-                    }
                 }
                 
             }            
@@ -207,7 +207,7 @@ namespace Colas
 
             double z1 = humedad;
             double z2 = 0.0;
-            double z3 = 0.0;
+            double z3 = z1 + (h * z2);
             double tiempo = 0.0;
 
             while (z1 > 1)
@@ -226,34 +226,43 @@ namespace Colas
             double retorno = 0.0;
             double humedad = ClienteActual.Humedad;
             double h = 1.0;
-            double k = 0.0;
+            //double k = 0.0;
 
-            switch(ClienteActual.tipoAuto)
-            {
-                case "Pequeño":
-                    k = 0.75;
-                    break;
-                case "Pick-up":
-                    k = 0.25;
-                    break;
-                case "Mediano":
-                    k = 0.5;
-                    break;
-            }
+            //switch(ClienteActual.tipoAuto)
+            //{
+            //    case "Pequeño":
+            //        k = 0.75;
+            //        break;
+            //    case "Pick-up":
+            //        k = 0.25;
+            //        break;
+            //    case "Mediano":
+            //        k = 0.5;
+            //        break;
+            //}
 
             double z1 = humedad;
-            double z2 = 0.0;
-            double z3 = 0.0;
             double tiempo = 0.0;
-       
-            while (z1 > 1)
+            double z2 = (-5 * tiempo * tiempo) + (2 * z1) - 200;
+            double z3 = z1 + (h * z2);
+
+            do
             {
                 tiempo = tiempo + h;
                 z1 = z3;
                 z2 = (-5 * tiempo * tiempo) + (2 * z1) - 200;
-                z3 = z1 + (h*z2);
+                z3 = z1 + (h * z2);
 
-            }
+            } while (z1 > 1);
+       
+            //while (z1 > 1)
+            //{
+            //    tiempo = tiempo + h;
+            //    z1 = z3;
+            //    z2 = (-5 * tiempo * tiempo) + (2 * z1) - 200;
+            //    z3 = z1 + (h*z2);
+
+            //}
             retorno = tiempo;
         
             return retorno;
