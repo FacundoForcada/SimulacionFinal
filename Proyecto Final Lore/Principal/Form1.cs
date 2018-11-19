@@ -392,13 +392,10 @@ namespace Principal
 
                         case "Fin de Aspirado":
                             var clienteAspirado = aspirado.FinAtencion();
-                            if (clienteAspirado.Humedad == 0.0)
+                            if (clienteAspirado.Humedad <= 1)
                             {
                                 ponerAlfombra.LlegadaCliente(relojActual, clienteAspirado);
-                            } else
-                            {
-                                ponerAlfombra.Cola.AgregarCliente(clienteAspirado);
-                            }
+                            } 
                             break;
                       
                         case "Fin de Lavadero 1":

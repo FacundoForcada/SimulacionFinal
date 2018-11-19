@@ -183,7 +183,7 @@ namespace Colas
             ProximoFinAtencion = hora.AddMinutes(demora);
         }
 
-        public void ComenzarSecado(DateTime hora)
+        public void ComenzarSecado(DateTime hora) //SECADO AL AIRE
         {
             ClienteActual.ActualizarSecado(hora);
             var demora = 0.0;
@@ -206,7 +206,7 @@ namespace Colas
             }
 
             double z1 = humedad;
-            double z2 = 0.0;
+            double z2 = -k * z1;
             double z3 = z1 + (h * z2);
             double tiempo = 0.0;
 
@@ -218,28 +218,25 @@ namespace Colas
                 z3 = z1 + (h * z2);
 
             }
+            if (z1 < 0)
+            {
+                ClienteActual.Humedad = 0;
+            }
+            else
+            {
+
+                ClienteActual.Humedad = z1;
+            }
+            ClienteActual.Humedad = z1;
             demora = tiempo;
             ProximoFinAtencion = hora.AddMinutes(demora);
         }
-        public double CalcularSecado()
+        public double CalcularSecado() //SECADO CON SECADORA
         {
             double retorno = 0.0;
             double humedad = ClienteActual.Humedad;
             double h = 1.0;
-            //double k = 0.0;
-
-            //switch(ClienteActual.tipoAuto)
-            //{
-            //    case "Pequeño":
-            //        k = 0.75;
-            //        break;
-            //    case "Pick-up":
-            //        k = 0.25;
-            //        break;
-            //    case "Mediano":
-            //        k = 0.5;
-            //        break;
-            //}
+  
 
             double z1 = humedad;
             double tiempo = 0.0;
@@ -264,6 +261,17 @@ namespace Colas
 
             //}
             retorno = tiempo;
+
+            if (z1 < 0)
+            {
+                ClienteActual.Humedad = 0;
+            }
+            else
+            {
+
+                ClienteActual.Humedad = z1;
+            }
+            
         
             return retorno;
         }

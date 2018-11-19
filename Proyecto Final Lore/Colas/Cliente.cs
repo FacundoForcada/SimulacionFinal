@@ -12,7 +12,7 @@ namespace Colas
         public decimal TiempoEnSistema { get; protected set; }
         public string tipoAuto { get; protected set; }
         public Alfombra Alfombra { get; protected set; }
-        public double Humedad { get; protected set; }
+        public double Humedad { get; set; }
         public DateTime ComienzoSecado { get; protected set; }
 
         public Cliente(String nombre, string tipo, Alfombra alfombra)
