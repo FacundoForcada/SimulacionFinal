@@ -425,7 +425,6 @@ namespace Principal
                                 lavadero2.cambiarEstado("Bloqueado");
                                 lavadero2.ComenzarSecado(relojActual);
                             }
-                            
                             break;
                         case "Fin de Secado":
                             Cliente clienteASecado = null;
