@@ -16,10 +16,11 @@ namespace Colas
         public Cliente ClienteActual { get; protected set; }
         public int CantidadAtendidos { get; protected set; }
         public double valorK { get; protected set; } 
-        public DateTime TiempoAtencion { get; protected set; }
+        public DateTime TiempoAtencion { get; set; }
         public Boolean bContinua { get; protected set; }
         public Boolean bTiempoFijo { get; protected set; }
         public int MaxCola { get; protected set; }
+        public DateTime? DuracionAtencion { get; set; }
 
         public Servidor(IDistribucion atencion, ICola cola, string nombre, Boolean cont, Boolean tiempoFijo)
         {
@@ -41,17 +42,18 @@ namespace Colas
             Estado = "Libre";
             CantidadAtendidos = 0;
             bContinua = cont;
+           
         }
 
         public Servidor(string nombre, Boolean Cont, Boolean tiempoFijo)
         {
-        ;
             Nombre = nombre;
             Estado = "Libre";
             CantidadAtendidos = 0;
             bContinua = Cont;
             valorK = 0.0;
             bTiempoFijo = tiempoFijo;
+            
         }
 
         public bool EstaLibre()
@@ -73,18 +75,23 @@ namespace Colas
                 if (bTiempoFijo)
                 {
                     ProximoFinAtencion = hora.AddMinutes(TiempoAtencion.Minute);
+                    DuracionAtencion = new DateTime(2018, 11, 19, 0, 0, 0);
+                    DuracionAtencion = DuracionAtencion.Value.AddMinutes(demora);
 
                 }
                 else
                 { 
-                demora = DistribucionAtencion.Generar();
-                ProximoFinAtencion = hora.AddMinutes(demora);
+                    demora = DistribucionAtencion.Generar();
+                    DuracionAtencion = new DateTime(2018, 11, 19, 0, 0, 0);
+                    DuracionAtencion = DuracionAtencion.Value.AddMinutes(demora);
+                    ProximoFinAtencion = hora.AddMinutes(demora);
                 }
             }
             else
             {
                 demora = CalcularSecado();
-                var valor = ProximoFinAtencion; //para prueba
+                DuracionAtencion = new DateTime(2018, 11, 19, 0, 0, 0);
+                DuracionAtencion = DuracionAtencion.Value.AddMinutes(demora);
                 ProximoFinAtencion = hora.AddMinutes(demora);
             }
           
@@ -104,8 +111,28 @@ namespace Colas
                 }
                 else
                 {
-                    Estado = $"Atendiendo a {cliente.Nombre}";
-                    cliente.ComenzarAtencion(hora, Nombre);
+                    if (Nombre == "Puesta de Alfombra")
+                    {
+                        if (cliente.Alfombra.Estado == "Alfombra Aspirada")
+                        {
+                            Estado = $"Atendiendo a {cliente.Nombre}";
+                            cliente.ComenzarAtencion(hora, Nombre);
+                        }
+                        else
+                        {
+                            var cantidadCola = Cola.Cantidad();
+                            Cola.AgregarCliente(cliente);
+                            if (cantidadCola < Cola.Cantidad())
+                            {
+                                MaxCola = Cola.Cantidad();
+                            }
+                        }
+                    } else
+                    {
+                        Estado = $"Atendiendo a {cliente.Nombre}";
+                        cliente.ComenzarAtencion(hora, Nombre);
+                    }
+                    
                 }
                 ActualizarFinAtencion(hora);
             }
@@ -156,17 +183,18 @@ namespace Colas
                         if (Nombre == "Aspirado")
                         {
                             ClienteActual = Cola.ProximoCliente();
-                            Estado = $"Atendiendo a {cliente.Alfombra.Nombre}";
-                            cliente.Alfombra.ComenzarAtencion(ProximoFinAtencion.Value, Nombre);
+                            Estado = $"Atendiendo a {ClienteActual.Alfombra.Nombre}";
+                            ClienteActual.Alfombra.ComenzarAtencion(ProximoFinAtencion.Value, Nombre);
                         }
                         else
                         {
                             if (Estado != "Bloqueado")
                             {
-                                ClienteActual = Cola.ProximoCliente();
-                                Estado = $"Atendiendo a {ClienteActual.Nombre}";
-                                ClienteActual.ComenzarAtencion(ProximoFinAtencion.Value, Nombre);
+                            ClienteActual = Cola.ProximoCliente();
+                            Estado = $"Atendiendo a {ClienteActual.Nombre}";
+                            ClienteActual.ComenzarAtencion(ProximoFinAtencion.Value, Nombre);
                             }
+
 
                         }
 
@@ -218,16 +246,9 @@ namespace Colas
                 z3 = z1 + (h * z2);
 
             }
-            if (z1 < 0)
-            {
-                ClienteActual.Humedad = 0;
-            }
-            else
-            {
 
-                ClienteActual.Humedad = z1;
-            }
             ClienteActual.Humedad = z1;
+
             demora = tiempo;
             ProximoFinAtencion = hora.AddMinutes(demora);
         }
@@ -250,7 +271,7 @@ namespace Colas
                 z2 = (-5 * tiempo * tiempo) + (2 * z1) - 200;
                 z3 = z1 + (h * z2);
 
-            } while (z1 > 1);
+            } while (z1> 1);
        
             //while (z1 > 1)
             //{
@@ -262,17 +283,9 @@ namespace Colas
             //}
             retorno = tiempo;
 
-            if (z1 < 0)
-            {
-                ClienteActual.Humedad = 0;
-            }
-            else
-            {
+            ClienteActual.Humedad = z1;
 
-                ClienteActual.Humedad = z1;
-            }
-            
-        
+
             return retorno;
         }
 

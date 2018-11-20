@@ -7,10 +7,12 @@ namespace NumerosAleatorios.VariablesAleatorias
     public class DistribucionExponencialNegativa : IDistribucion
     {
         public double Lambda { get; protected set; }
-        public IGeneradorNumerosAleatorios Generador { get; protected set; }
+        public IGeneradorNumerosAleatorios Generador { get; set; }
+        public double random { get; set; }
 
         public DistribucionExponencialNegativa(double lambda)
         {
+            random = 0;
             if (lambda <= 0)
                 throw new NotSupportedException("Lambda debe ser un número positivo");
             Lambda = lambda;
@@ -19,6 +21,7 @@ namespace NumerosAleatorios.VariablesAleatorias
 
         public DistribucionExponencialNegativa(double lambda, IGeneradorNumerosAleatorios generador)
         {
+            random = 0;
             if (lambda <= 0)
                 throw new NotSupportedException("Lambda debe ser un número positivo");
             Lambda = lambda;
@@ -33,6 +36,7 @@ namespace NumerosAleatorios.VariablesAleatorias
         public double Generar()
         {
             var aleatorio = Generador.Generar();
+            random = aleatorio;
             var variable = (-1 / Lambda) * Math.Log(1 - aleatorio);
             return variable;
         }
@@ -45,6 +49,11 @@ namespace NumerosAleatorios.VariablesAleatorias
                 variables.Add(Generar());
             }
             return variables;
+        }
+
+        public double GetRandomGenerador()
+        {
+            return random;
         }
     }
 }

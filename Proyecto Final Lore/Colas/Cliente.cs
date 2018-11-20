@@ -67,10 +67,10 @@ namespace Colas
             return TiempoEnSistema - TiempoAtencion;
         }
 
-        public void CalcularSecado(DateTime hora)
+        public void CalcularSecado(DateTime hora) //secado manual
         {
        
-            double humedad = Humedad;
+            double humedad = 100.0;
             double h = 1.0;
             double k = 0.0;
 
@@ -91,15 +91,19 @@ namespace Colas
             double z2 = -k * z1;
             double z3 = z1 + (h * z2);
             double tiempo = 0.0;
+            var minutos_comienzo = DateTimeConverter.EnMinutos(ComienzoSecado);
+            var minutos_hora = DateTimeConverter.EnMinutos(hora);
+            var diferencia_minutos = (double)Math.Abs(minutos_comienzo - minutos_hora);
 
-            while (ComienzoSecado < hora )
+            while (tiempo <= diferencia_minutos)
             {
                 tiempo = tiempo + h;
                 z1 = z3;
                 z2 = -k * z1;
                 z3 = z1 + (h * z2);
-                Humedad = Humedad - z1;
             }
+
+            Humedad = z1;
             
         }
 

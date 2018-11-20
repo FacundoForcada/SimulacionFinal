@@ -8,5 +8,6 @@ namespace NumerosAleatorios.VariablesAleatorias
         void AsignarGenerador(IGeneradorNumerosAleatorios generador);
         double Generar();
         List<double> Generar(int cantidad);
+        double GetRandomGenerador();
     }
 }

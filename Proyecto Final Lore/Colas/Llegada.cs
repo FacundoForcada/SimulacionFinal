@@ -5,9 +5,10 @@ namespace Colas.Clientes
 {
     public class Llegada
     {
-        public IDistribucion DistribucionLlegadas { get; protected set; }
+        public IDistribucion DistribucionLlegadas { get; set; }
         public DateTime? ProximaLlegada { get; protected set; }
         public DateTime? Cierre { get; protected set; }
+        public DateTime? TiempoEntreLlegadas { get; set; }
 
         private readonly DateTime _horaInicio;
         private readonly DateTime _horaFin;
@@ -17,6 +18,7 @@ namespace Colas.Clientes
             DistribucionLlegadas = distribucion;
             _horaInicio = horaInicio;
             _horaFin = horaFin;
+           
         }
 
         public void Abrir()
@@ -34,6 +36,8 @@ namespace Colas.Clientes
             //{
             //    demora = demora * 60; //paso el valor del double a su correspondencia en minutos.
             //}
+            TiempoEntreLlegadas = new DateTime(2018, 11, 19, 0, 0, 0);
+            TiempoEntreLlegadas = TiempoEntreLlegadas.Value.AddMinutes(demora);
             ProximaLlegada = ProximaLlegada.Value.AddMinutes(demora);
         }
 
