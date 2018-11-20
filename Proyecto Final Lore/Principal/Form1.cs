@@ -41,7 +41,7 @@ namespace Principal
 
 
         private delegate void StatusDelegate(int dia, DateTime relojActual, int simulacion);
-        private delegate void ResultadosDelegate(decimal promedioAtendidos, decimal promedioPermanencia, int colaMax);
+        private delegate void ResultadosDelegate(decimal promedioAtendidos, decimal promedioPermanencia, int colaMax, int atendidos);
 
         private readonly DistribucionAleatoria _tipoAuto;
 
@@ -279,7 +279,7 @@ namespace Principal
             var quitadoAlfombras = new Servidor(tiempoQA, colaQA, "Quitado de Alfombra", false, true);
 
             //manejo de Aspirado
-            var generadorCongMixto = new CongruencialMixto(1000, 12, 17, 5000);
+            var generadorCongMixto = new CongruencialMixto(1000, 12, 17, 5000); 
             var aspirado_a = double.Parse(txt_aspirado_a.Text);
             var aspirado_b = double.Parse(txt_aspirado_b.Text);
             var distribucionAspirado = new DistribucionUniforme(aspirado_a, aspirado_b, generadorCongMixto);
@@ -291,6 +291,7 @@ namespace Principal
             var lavado_a = double.Parse(txt_lavado_a.Text);
             var lavado_b = double.Parse(txt_lavado_b.Text);
             var distribucionLavado = new DistribucionUniforme(lavado_a, lavado_b, generadorCongMixto);
+            //var distribucionLavado = new DistribucionUniforme(lavado_a, lavado_b);
             var colaLS = new ColaFifo("Lavadero");
             var lavadero1 = new Servidor(distribucionLavado, colaLS, "Lavadero 1", false, false);
             var lavadero2 = new Servidor(distribucionLavado, colaLS, "Lavadero 2", false, false);
@@ -379,6 +380,7 @@ namespace Principal
 
                         case "Fin de Quitado de Alfombras":
                             var clienteSinAlfombra = quitadoAlfombras.FinAtencion();
+                            aspirado.LlegadaCliente(relojActual, clienteSinAlfombra);
                             if (lavadero1.EstaLibre())
                             {
                                 lavadero1.LlegadaCliente(relojActual, clienteSinAlfombra);
@@ -387,7 +389,7 @@ namespace Principal
                             {
                                 lavadero2.LlegadaCliente(relojActual, clienteSinAlfombra);
                             }
-                            aspirado.LlegadaCliente(relojActual, clienteSinAlfombra);
+                            
                             break;
 
                         case "Fin de Aspirado":
@@ -517,7 +519,7 @@ namespace Principal
                 }
             }
 
-            Invoke(resultadosInstance, promedioAtendidos, promedioPermanencia, colaMax);
+            Invoke(resultadosInstance, promedioAtendidos, promedioPermanencia, colaMax, atendidos);
             Invoke(inicioFinInstance, true);
             var resultado = _cancelar ? "interrumpida" : "completa";
             MessageBox.Show($@"Simulación {resultado}", @"Resultado");
@@ -642,14 +644,14 @@ namespace Principal
             
         }
 
-        private void MostrarResultados(decimal promedioAtendidos, decimal promedioPermanencia, int MaxCola)
+        private void MostrarResultados(decimal promedioAtendidos, decimal promedioPermanencia, int MaxCola, int atendidos)
         {
             var sb = new StringBuilder();
             var promedio_atendidos = Math.Round(promedioAtendidos, 3);
             var promedio_permanencia = Math.Round(promedioPermanencia, 3);
             sb.Append($"El promedio de atendidos es:  {promedio_atendidos}  y el promedio de Permanencia es {promedio_permanencia} ");
-            sb.Append($" A lo máximo que llegó al cola de los clientes que esperaron a ser atendidos por el lavadero fue: {MaxCola} ");
-
+            sb.Append($" A lo máximo que llegó la cola de los clientes que esperaron a ser atendidos por el lavadero fue: {MaxCola} ");
+            sb.Append($"La cantidad de clientes atentidos fue: {atendidos} ");
             MessageBox.Show(sb.ToString(), @"Resultado");
         }
 

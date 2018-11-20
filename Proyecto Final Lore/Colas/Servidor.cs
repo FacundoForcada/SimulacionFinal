@@ -271,7 +271,7 @@ namespace Colas
                 z2 = (-5 * tiempo * tiempo) + (2 * z1) - 200;
                 z3 = z1 + (h * z2);
 
-            } while (z1 > 1);
+            } while (z1> 1);
        
             //while (z1 > 1)
             //{

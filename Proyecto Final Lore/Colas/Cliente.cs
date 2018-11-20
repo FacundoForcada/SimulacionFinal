@@ -70,7 +70,7 @@ namespace Colas
         public void CalcularSecado(DateTime hora) //secado manual
         {
        
-            double humedad = Humedad;
+            double humedad = 100.0;
             double h = 1.0;
             double k = 0.0;
 
@@ -101,8 +101,9 @@ namespace Colas
                 z1 = z3;
                 z2 = -k * z1;
                 z3 = z1 + (h * z2);
-                Humedad = Humedad - z1;
             }
+
+            Humedad = z1;
             
         }
 
