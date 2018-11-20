@@ -9,6 +9,7 @@ namespace NumerosAleatorios.VariablesAleatorias
         public double A { get; protected set; }
         public double B { get; protected set; }
         public IGeneradorNumerosAleatorios Generador { get; protected set; }
+        public double random { get; set; }
 
         public DistribucionUniforme(double a, double b)
         {
@@ -17,6 +18,7 @@ namespace NumerosAleatorios.VariablesAleatorias
             A = a;
             B = b;
             Generador = new GeneradorDelSistema();
+            random = 0;
         }
 
         public DistribucionUniforme(double a, double b, IGeneradorNumerosAleatorios generador)
@@ -26,6 +28,7 @@ namespace NumerosAleatorios.VariablesAleatorias
             A = a;
             B = b;
             Generador = generador;
+            random = 0;
         }
 
         public void AsignarGenerador(IGeneradorNumerosAleatorios generador)
@@ -36,6 +39,7 @@ namespace NumerosAleatorios.VariablesAleatorias
         public double Generar()
         {
             var aleatorio = Generador.Generar();
+            random = aleatorio;
             var variable = A + aleatorio * (B - A);
             return variable;
         }
@@ -48,6 +52,11 @@ namespace NumerosAleatorios.VariablesAleatorias
                 variables.Add(Generar());
             }
             return variables;
+        }
+
+        public double GetRandomGenerador()
+        {
+            return random;
         }
     }
 }

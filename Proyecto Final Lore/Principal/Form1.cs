@@ -364,7 +364,7 @@ namespace Principal
                         case "Llegada":
                             numAutos++;
                             String tipoAuto = ObtenerTipo();
-                            var alfombraLlegando = new Alfombra($"Alfombra de Cliente {numAutos}");
+                            var alfombraLlegando = new Alfombra($"Alfombra de Auto {numAutos}");
                             var clienteLlegando = new Cliente ($"Auto {numAutos}", tipoAuto, alfombraLlegando);
                             clienteLlegando.Llegar(relojActual);
                             quitadoAlfombras.LlegadaCliente(relojActual, clienteLlegando);
@@ -399,28 +399,44 @@ namespace Principal
                             break;
                       
                         case "Fin de Lavadero 1":
-                        
-                            if (secadora.EstaLibre())
+                            if (lavadero1.ClienteActual.Humedad < 1)
                             {
-                                var clienteLavado1 = lavadero1.FinAtencion();
-                                secadora.LlegadaCliente(relojActual, clienteLavado1);
+                                var clienteSeco= lavadero1.FinAtencion();
+                                ponerAlfombra.LlegadaCliente(relojActual, clienteSeco);
+
                             } else
                             {
-                                lavadero1.cambiarEstado("Bloqueado");   
-                                lavadero1.ComenzarSecado(relojActual);
+                                if (secadora.EstaLibre())
+                                {
+                                    var clienteLavado1 = lavadero1.FinAtencion();
+                                    secadora.LlegadaCliente(relojActual, clienteLavado1);
+                                }
+                                else
+                                {
+                                    lavadero1.cambiarEstado("Bloqueado");
+                                    lavadero1.ComenzarSecado(relojActual);
+                                }
                             }
+                            
                             
                             break;
                         case "Fin de Lavadero 2":
-                         
-                            if (secadora.EstaLibre())
+                         if (lavadero2.ClienteActual.Humedad < 1)
                             {
-                                var clienteLavado2 = lavadero2.FinAtencion();
-                                secadora.LlegadaCliente(relojActual, clienteLavado2);
+                                var clienteSeco = lavadero2.FinAtencion();
+                                ponerAlfombra.LlegadaCliente(relojActual, clienteSeco);
                             } else
                             {
-                                lavadero2.cambiarEstado("Bloqueado");
-                                lavadero2.ComenzarSecado(relojActual);
+                                if (secadora.EstaLibre())
+                                {
+                                    var clienteLavado2 = lavadero2.FinAtencion();
+                                    secadora.LlegadaCliente(relojActual, clienteLavado2);
+                                }
+                                else
+                                {
+                                    lavadero2.cambiarEstado("Bloqueado");
+                                    lavadero2.ComenzarSecado(relojActual);
+                                } 
                             }
                             break;
                         case "Fin de Secado":
@@ -453,19 +469,14 @@ namespace Principal
                                         lavadero2.cambiarEstado("Libre");
                                         lavadero2.FinAtencion();
                                         secadora.LlegadaCliente(relojActual, clienteASecado);
-                                    }
+                                    } 
+                                
                                 }
 
                             }
-                            
-                            if (clienteSecado.Alfombra.Estado == "Alfombra Aspirada") 
-                            {
-                                ponerAlfombra.LlegadaCliente(relojActual, clienteSecado);
-                            }
-                            else
-                            {
-                                ponerAlfombra.Cola.AgregarCliente(clienteSecado);
-                            }
+
+                            ponerAlfombra.LlegadaCliente(relojActual, clienteSecado);
+                           
                             break;
                         case "Fin Puesta de alfombras":
 
@@ -516,8 +527,9 @@ namespace Principal
            ICola colaQA, Servidor quitadoAlfombras, ICola colaAA, Servidor aspiradoAlfombras, ICola colaLS, Servidor lavadero1,
            Servidor lavadero2, Servidor secadora, ICola colaPA, Servidor ponerAlfombras,
            int atendidos, decimal permanenciaDiaria, IEnumerable<Cliente> clientes)
-
+        
         {
+
             var row = dgv_simulaciones.Rows.Add(
                             relojActual.ToString("HH:mm:ss"),
                             eventoActual,
@@ -633,8 +645,10 @@ namespace Principal
         private void MostrarResultados(decimal promedioAtendidos, decimal promedioPermanencia, int MaxCola)
         {
             var sb = new StringBuilder();
-            sb.Append($"El promedio de atendidos es:  {promedioAtendidos}  y el promedio de Permanencia es {promedioPermanencia}");
-            sb.Append($"A lo máximo que llegó al cola de los clientes que esperaron a ser atendidos por el lavadero fue: {MaxCola} ");
+            var promedio_atendidos = Math.Round(promedioAtendidos, 3);
+            var promedio_permanencia = Math.Round(promedioPermanencia, 3);
+            sb.Append($"El promedio de atendidos es:  {promedio_atendidos}  y el promedio de Permanencia es {promedio_permanencia} ");
+            sb.Append($" A lo máximo que llegó al cola de los clientes que esperaron a ser atendidos por el lavadero fue: {MaxCola} ");
 
             MessageBox.Show(sb.ToString(), @"Resultado");
         }

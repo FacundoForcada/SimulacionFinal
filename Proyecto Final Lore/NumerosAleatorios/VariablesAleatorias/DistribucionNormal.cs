@@ -9,6 +9,7 @@ namespace NumerosAleatorios.VariablesAleatorias
         public double Media { get; protected set; }
         public double Varianza { get; protected set; }
         public IGeneradorNumerosAleatorios Generador { get; protected set; }
+        public double random { get; set; }
 
         public DistribucionNormal(double media, double varianza)
         {
@@ -17,6 +18,7 @@ namespace NumerosAleatorios.VariablesAleatorias
             Media = media;
             Varianza = varianza;
             Generador = new GeneradorDelSistema();
+            random = 0;
         }
         public DistribucionNormal(double media, double varianza, IGeneradorNumerosAleatorios generador)
         {
@@ -25,6 +27,7 @@ namespace NumerosAleatorios.VariablesAleatorias
             Media = media;
             Varianza = varianza;
             Generador = generador;
+            random = 0;
         }
 
         public void AsignarGenerador(IGeneradorNumerosAleatorios generador)
@@ -37,6 +40,7 @@ namespace NumerosAleatorios.VariablesAleatorias
             var aleatorio1 = Generador.Generar();
             var aleatorio2 = Generador.Generar();
             var z = Math.Sqrt(-2 * Math.Log(aleatorio1)) * Math.Cos(2 * Math.PI * aleatorio2);
+            random = z;
             var variable = Media + z * Varianza;
             return variable;
         }
@@ -49,6 +53,11 @@ namespace NumerosAleatorios.VariablesAleatorias
                 variables.Add(Generar());
             }
             return variables;
+        }
+
+        public double GetRandomGenerador()
+        {
+            return random;
         }
     }
 }

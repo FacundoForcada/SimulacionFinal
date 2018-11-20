@@ -516,7 +516,6 @@
             // 
             this.proxima_llegada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.proxima_llegada.FillWeight = 1F;
-            this.proxima_llegada.Frozen = true;
             this.proxima_llegada.HeaderText = "Próxima Llegada";
             this.proxima_llegada.Name = "proxima_llegada";
             this.proxima_llegada.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -601,7 +600,7 @@
             this.estado_lavadero1.Name = "estado_lavadero1";
             this.estado_lavadero1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_lavadero1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_lavadero1.Width = 200;
+            this.estado_lavadero1.Width = 150;
             // 
             // proximo_fin_lavadero1
             // 
@@ -631,7 +630,7 @@
             this.estado_lavadero2.Name = "estado_lavadero2";
             this.estado_lavadero2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_lavadero2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_lavadero2.Width = 200;
+            this.estado_lavadero2.Width = 150;
             // 
             // proximo_fin_lavadero2
             // 
@@ -658,6 +657,7 @@
             this.estado_secado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.estado_secado.HeaderText = "Estado Secado";
             this.estado_secado.Name = "estado_secado";
+            this.estado_secado.Width = 150;
             // 
             // proximo_fin_secado
             // 
