@@ -217,7 +217,7 @@ namespace Principal
                 return false;
             }
 
-            mensaje = " El tiempo de Quitado y de puesta de alfombras debe ser un entero positivo ";
+            mensaje = " El tiempo de Quitado y de puesta de alfombras debe ser un entero positivo";
 
             if (string.IsNullOrEmpty(txtQA.Text) )
             {
@@ -317,6 +317,7 @@ namespace Principal
             var numAutos = 0;
             var clientes = new List<Cliente>();
             int colaMax = 0;
+            var atendidos = 0;
 
             _cancelar = false;
             for (var dia = 1; dia <= dias; dia++)
@@ -327,7 +328,7 @@ namespace Principal
                     break;
                 }
                 
-                var atendidos = 0;
+                
                 decimal permanenciaDiaria = 0;
                 llegadas.Abrir();
 
@@ -649,8 +650,8 @@ namespace Principal
             var sb = new StringBuilder();
             var promedio_atendidos = Math.Round(promedioAtendidos, 3);
             var promedio_permanencia = Math.Round(promedioPermanencia, 3);
-            sb.Append($"El promedio de atendidos es:  {promedio_atendidos}  y el promedio de Permanencia es {promedio_permanencia} ");
-            sb.Append($" A lo máximo que llegó la cola de los clientes que esperaron a ser atendidos por el lavadero fue: {MaxCola} ");
+            sb.Append($"El promedio de autos atendidos es:  {promedio_atendidos}  y el tiempo promedio de Permanencia es {promedio_permanencia} minutos ");
+            sb.Append($" A lo máximo que llegó la cola de los clientes que esperaron a ser atendidos por el lavadero fue de: {MaxCola} autos");
             sb.Append($"La cantidad de clientes atentidos fue: {atendidos} ");
             MessageBox.Show(sb.ToString(), @"Resultado");
         }
